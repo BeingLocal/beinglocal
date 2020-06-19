@@ -10,6 +10,7 @@ import { MissionComponent } from './mission/mission.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './app-routing.module';
     HomeComponent,
     HeaderComponent,
     MissionComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
