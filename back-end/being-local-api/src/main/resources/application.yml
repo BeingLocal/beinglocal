@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    platform: mysql
+    hikari:
+      jdbc-url: jdbc:mysql://blmysqldev.crlmnyn9bjma.ap-south-1.rds.amazonaws.com:3306/beinglocal
+      username: tigress
+      password: tiger1811
+      connection-timeout: 60000
+      maximum-pool-size: 5
+      connection-test-query: select 1 from dual
+      pool-name: beinglocalCP
+    url: jdbc:mysql://blmysqldev.crlmnyn9bjma.ap-south-1.rds.amazonaws.com:3306/beinglocal
+    username: tigress
+    password: tiger1811
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ["loggers","health","info"]
+server:
+  servlet:
+    context-path: /being-local-api
+logging:
+  file:
+    max-history: 7
+    max-size: 1kb
+    path: ${CATALINA_HOME}/logs
+    name: being-local.log
+    total-size-cap: 100MB
