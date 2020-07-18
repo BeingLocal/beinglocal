@@ -1,34 +1,46 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTreeModule, MatSliderModule, MatMenu, MatButton, MatMenuTrigger, MatMenuModule} from '@angular/material';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
-import { MissionComponent } from './mission/mission.component';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { ProductsComponent } from './products/products.component';
+import { AppComponent } from './app.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCommonModule, MatRippleModule} from '@angular/material/core';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {BidiModule} from '@angular/cdk/bidi/index';
+import {PlatformModule} from '@angular/cdk/platform/index';
+import {NativeDateModule} from '@angular/material/core';
+import {SearchBoxComponent } from './search-box/search-box.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    HeaderComponent,
-    MissionComponent,
-    AboutUsComponent,
-    ProductsComponent
+    NavbarComponent,
+    SearchBoxComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MatTreeModule,
-    MatSliderModule,
-    MatMenuModule,
     AppRoutingModule,
-    RouterModule
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule,
+    MatCommonModule,
+    MatRippleModule,
+    ScrollingModule,
+    NativeDateModule,
+    MatFormFieldModule,
+    BidiModule,
+    PlatformModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
