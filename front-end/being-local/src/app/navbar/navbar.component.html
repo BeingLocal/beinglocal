@@ -1,23 +1,28 @@
-<mat-toolbar color="primary" style="height: 10%;">
-  <ng-container>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu" color="accent">
-      <button mat-menu-item>
-        <span>About Us</span>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <ng-container>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
       </button>
-      <button mat-menu-item>
-        <span>Reach Us</span>
-      </button>
-    </mat-menu>
-    <div class="brand">
-      <span>Being Local</span>
+      <mat-menu #menu="matMenu" color="accent">
+        <button mat-menu-item>
+          <span>About Us</span>
+        </button>
+        <button mat-menu-item>
+          <span>Reach Us</span>
+        </button>
+      </mat-menu>
+      <div class="brand">
+        <span>Being Local</span>
+      </div>
+    </ng-container>
+    <div class="search-box" fxShow="”true”" fxHide.lt-md="”true”">
+      <app-search-box></app-search-box>
     </div>
-  </ng-container>
-  <ng-container>
+  </mat-toolbar-row>
+  <mat-toolbar-row fxShow="true" fxHide.gt-sm="true">
     <div class="search-box">
       <app-search-box></app-search-box>
     </div>
-  </ng-container>
+  </mat-toolbar-row>
 </mat-toolbar>

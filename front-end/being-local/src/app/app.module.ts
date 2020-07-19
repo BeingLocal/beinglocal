@@ -7,28 +7,27 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatCommonModule, MatRippleModule} from '@angular/material/core';
-import {ScrollingModule} from '@angular/cdk/scrolling';
-import {BidiModule} from '@angular/cdk/bidi/index';
-import {PlatformModule} from '@angular/cdk/platform/index';
-import {NativeDateModule} from '@angular/material/core';
-import {SearchBoxComponent } from './search-box/search-box.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatCommonModule, MatRippleModule } from '@angular/material/core';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BidiModule } from '@angular/cdk/bidi/index';
+import { PlatformModule } from '@angular/cdk/platform/index';
+import { NativeDateModule } from '@angular/material/core';
+import { SearchBoxComponent } from './search-box/search-box.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    SearchBoxComponent
-  ],
+  declarations: [AppComponent, NavbarComponent, SearchBoxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
@@ -40,9 +39,10 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     BidiModule,
     PlatformModule,
-    MatInputModule
+    MatInputModule,
+    FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
