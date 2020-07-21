@@ -1,8 +1,17 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <ng-container>
-      <button color="primary" mat-icon-button [matMenuTriggerFor]="menu" class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
-        <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color menu">menu</mat-icon>
+      <button
+        color="primary"
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu"
+      >
+        <mat-icon
+          role="img"
+          class="mat-icon notranslate material-icons mat-icon-no-color menu"
+          >menu</mat-icon
+        >
       </button>
       <mat-menu #menu="matMenu" color="accent">
         <button mat-menu-item>
