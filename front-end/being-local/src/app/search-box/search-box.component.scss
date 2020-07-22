@@ -15,16 +15,14 @@ input {
   display: flex;
 
   .search-icon {
-    opacity: 5;
-    z-index: 1000;
-    position: relative;
-    padding-left: 92px;
+    position: absolute;
+    padding-left: 5%;
     padding-top: 10px;
   }
 
   .input-box {
-    width: 88% !important;
-    margin-left: -3% !important;
+    width: 90% !important;
+    margin-left: 5% !important;
   }
 
   input {
@@ -36,16 +34,13 @@ input {
   display: flex;
 
   .search-icon {
-    opacity: 5;
-    z-index: 1000;
-    position: relative;
-    padding-left: 10px;
+    position: absolute;
+    padding-left: 1%;
     padding-top: 10px;
   }
 
   .input-box {
     width: 97% !important;
-    margin-left: -4% !important;
   }
 
   input {
