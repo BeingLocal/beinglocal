@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface SearchProductClassificationService extends ISearchService<ProductClassification, String> {
 
+    List<ProductClassification> findByParentId(String parentId);
 }
