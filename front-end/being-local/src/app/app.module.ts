@@ -19,14 +19,16 @@ import { SearchBoxComponent } from './search-box/search-box.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, SearchBoxComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
+      enabled: environment.production
     }),
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -43,6 +45,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
