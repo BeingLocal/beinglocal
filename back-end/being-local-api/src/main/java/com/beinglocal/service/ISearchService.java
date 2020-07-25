@@ -1,8 +1,5 @@
 package com.beinglocal.service;
 
-import com.beinglocal.dto.ProductClassificationSearchCriteria;
-import com.beinglocal.dto.SearchCriteria;
-
 import java.util.ArrayList;
 import java.util.List;
 
