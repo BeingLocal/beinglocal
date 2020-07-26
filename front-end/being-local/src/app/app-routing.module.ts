@@ -12,6 +12,12 @@ const routes: Routes = [
           import('./modules/about-us/about-us.module').then(
             m => m.AboutUsModule
           )
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        loadChildren: () =>
+          import('./modules/home/home.module').then(m => m.HomeModule)
       }
     ]
   }

@@ -1,10 +1,16 @@
 <div class="about-us">
   <div fxLayout="row">
     <div>
-      <img [src]="'../../../assets/icons/bl-icon-64x64.png'" />
+      <img
+        class="cursor-pointer"
+        (click)="navigation.navigateToHome()"
+        [src]="'../../../assets/icons/bl-icon-64x64.png'"
+      />
     </div>
     <div>
-      <h1>BeingLocal</h1>
+      <h1 class="cursor-pointer" (click)="navigation.navigateToHome()">
+        BeingLocal
+      </h1>
     </div>
   </div>
   <br />
