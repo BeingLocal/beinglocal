@@ -1,22 +1,30 @@
-<div class="small-screen">
+<!-- <div class="small-screen">
   <mat-icon class="search-icon" fxShow="true" fxHide.lt-md="true"
     >search</mat-icon
   >
   <div
     class="input-box"
-    style="width: 90%; margin-left: 5%;"
+    style="width: 90%; margin-left: 0%;"
     fxShow="true"
     fxHide.lt-md="true"
   >
     <input placeholder="Type to Search" />
   </div>
-</div>
+</div> -->
 <!--hides on large screens-->
-<div class="large-screen">
+<!-- <div class="large-screen">
   <mat-icon class="search-icon" fxShow="true" fxHide.gt-sm="true"
     >search</mat-icon
   >
   <div class="input-box" style="width: 100%;" fxShow="true" fxHide.gt-sm="true">
     <input placeholder="Type to Search" />
+  </div>
+</div> -->
+<div class="input-box search">
+  <div class="relative-container">
+    <mat-icon class="search-icon">search</mat-icon>
+    <div class="input-box" style="width: 100%;">
+      <input placeholder="Type to Search" />
+    </div>
   </div>
 </div>
