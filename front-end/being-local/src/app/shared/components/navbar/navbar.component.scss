@@ -16,3 +16,13 @@
 .mat-icon-button-menu {
   border: none;
 }
+
+@media all and (max-width: 500px) {
+  .brand {
+    padding-left: 0%;
+    padding-right: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+  }
+}
