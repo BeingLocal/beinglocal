@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService } from '../../core/toolbar/toolbar.service';
+import { NavigationService } from '../../core/navigation/navigation.service';
 
 @Component({
   selector: 'app-about-us',
@@ -7,9 +7,7 @@ import { ToolbarService } from '../../core/toolbar/toolbar.service';
   styleUrls: ['./about-us.component.scss']
 })
 export class AboutUsComponent implements OnInit {
-  constructor(private toolbarService: ToolbarService) {}
+  constructor(public navigation: NavigationService) {}
 
-  ngOnInit(): void {
-    this.toolbarService.hide();
-  }
+  ngOnInit(): void {}
 }

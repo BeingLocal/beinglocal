@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService } from '../core/toolbar/toolbar.service';
+import { NavigationService } from '../../../core/navigation/navigation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,7 @@ import { ToolbarService } from '../core/toolbar/toolbar.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  constructor(public toolbarService: ToolbarService) {}
+  constructor(public navigation: NavigationService) {}
 
-  ngOnInit(): void {
-    this.toolbarService.show();
-  }
+  ngOnInit(): void {}
 }
