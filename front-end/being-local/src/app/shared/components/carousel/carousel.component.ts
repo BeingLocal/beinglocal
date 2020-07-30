@@ -19,7 +19,7 @@ export class CarouselComponent implements OnInit {
   public hideIndicators = false;
   public color: ThemePalette = 'accent';
   public maxWidth = 'auto';
-  public proportion = 25;
+  public proportion = 30;
   public useKeyboard = true;
   public useMouseWheel = false;
   public orientation: Orientation = 'ltr';
