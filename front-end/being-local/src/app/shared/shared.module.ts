@@ -16,9 +16,10 @@ import { BidiModule } from '@angular/cdk/bidi';
 import { PlatformModule } from '@angular/cdk/platform';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { InputTextComponent } from './components/input-text/input-text.component';
 
 @NgModule({
-  declarations: [NavbarComponent, SearchBoxComponent],
+  declarations: [NavbarComponent, SearchBoxComponent, InputTextComponent],
   imports: [
     CommonModule,
     MatToolbarModule,

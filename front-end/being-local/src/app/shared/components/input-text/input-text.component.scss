@@ -1,0 +1,52 @@
+input {
+  border: 1px solid var(--accent);
+  border-radius: 5px;
+  height: 32px;
+  transition: border-color 0.3s ease-in-out;
+  padding-left: 3%;
+  width: 86%;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    margin: 0px;
+    border: solid 2px var(--black) !important;
+  }
+}
+
+@media all and (max-width: 1024px) and (min-width: 769px) {
+  input {
+    padding-left: 4%;
+  }
+}
+
+@media all and (max-width: 768px) and (min-width: 500px) {
+  input {
+    padding-left: 4%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  input {
+    padding-left: 10%;
+  }
+}
+
+@media all and (max-width: 380px) {
+  input {
+    padding-left: 10%;
+  }
+}
+
+@media all and (max-width: 360px) {
+  input {
+    padding-left: 10%;
+  }
+}
+
+@media all and (max-width: 280px) {
+  input {
+    padding-left: 12%;
+  }
+}
