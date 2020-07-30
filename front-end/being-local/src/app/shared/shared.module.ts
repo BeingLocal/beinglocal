@@ -17,9 +17,16 @@ import { PlatformModule } from '@angular/cdk/platform';
 import { MatInputModule } from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { InputTextComponent } from './components/input-text/input-text.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 
 @NgModule({
-  declarations: [NavbarComponent, SearchBoxComponent, InputTextComponent],
+  declarations: [
+    NavbarComponent,
+    SearchBoxComponent,
+    InputTextComponent,
+    CarouselComponent
+  ],
   imports: [
     CommonModule,
     MatToolbarModule,
@@ -33,8 +40,9 @@ import { InputTextComponent } from './components/input-text/input-text.component
     BidiModule,
     PlatformModule,
     MatInputModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatCarouselModule.forRoot()
   ],
-  exports: [NavbarComponent, SearchBoxComponent]
+  exports: [NavbarComponent, SearchBoxComponent, CarouselComponent]
 })
 export class SharedModule {}
