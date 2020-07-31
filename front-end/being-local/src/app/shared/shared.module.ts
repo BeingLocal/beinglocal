@@ -5,6 +5,7 @@ import { SearchBoxComponent } from './components/search-box/search-box.component
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 import {
   MatCommonModule,
   MatRippleModule,
@@ -19,13 +20,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     SearchBoxComponent,
     InputTextComponent,
-    CarouselComponent
+    CarouselComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -41,8 +44,14 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
     PlatformModule,
     MatInputModule,
     FlexLayoutModule,
-    MatCarouselModule.forRoot()
+    MatCarouselModule.forRoot(),
+    MatCardModule
   ],
-  exports: [NavbarComponent, SearchBoxComponent, CarouselComponent]
+  exports: [
+    NavbarComponent,
+    SearchBoxComponent,
+    CarouselComponent,
+    CardComponent
+  ]
 })
 export class SharedModule {}

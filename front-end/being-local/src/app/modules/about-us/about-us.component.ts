@@ -9,5 +9,10 @@ import { NavigationService } from '../../core/navigation/navigation.service';
 export class AboutUsComponent implements OnInit {
   constructor(public navigation: NavigationService) {}
 
+  teamMembers = [
+    { name: 'Bindu Madhavi', title: 'Product Manager' },
+    { name: 'Binesh', title: 'Developer' },
+    { name: 'Ahad', title: 'Developer' }
+  ];
   ngOnInit(): void {}
 }

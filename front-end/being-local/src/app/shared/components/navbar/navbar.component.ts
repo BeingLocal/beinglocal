@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavigationService } from '../../../core/navigation/navigation.service';
 
 @Component({
@@ -7,6 +7,8 @@ import { NavigationService } from '../../../core/navigation/navigation.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
+  @Input() showSearchBox: true;
+
   constructor(public navigation: NavigationService) {}
 
   ngOnInit(): void {}
