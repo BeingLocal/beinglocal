@@ -28,83 +28,28 @@
   <div
     class="team"
     fxLayout="row wrap"
-    fxLayoutGap="16px grid"
-    ngStyle.md="padding-left:51px;"
-    ngStyle.xs="padding-left:63px;"
-    ngStyle.sm="padding-left:53px;"
-    ngStyle.lg="padding-left:10%;"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="25px"
   >
     <div
-      fxFlex="33%"
-      fxFlex.xs="100%"
-      fxFlex.sm="33%"
+      fxFlex="calc(33%-25px)"
+      fxFlex.sm="calc(50%-25px)"
+      fxFlex.xs="calc(50%-25px)"
       *ngFor="let teamMember of teamMembers"
+      ngStyle.md="padding-left:7%;"
+      ngStyle.lg="padding-left:7%;"
+      ngStyle.xl="padding-left:10%;"
     >
       <app-card
         cardTitle="{{ teamMember.name }}"
         subTitle="{{ teamMember.title }}"
+        linkedin="{{ teamMember.linkedin }}"
+        github="{{ teamMember.github }}"
+        twitter="{{ teamMember.twitter }}"
       ></app-card>
     </div>
-    <!-- <div>
-      <app-card cardTitle="Bindu" subTitle="Product Manager"></app-card>
-    </div>
-    <div>
-      <app-card cardTitle="Binesh" subTitle="Developer"></app-card>
-    </div>
-    <div>
-      <app-card cardTitle="Ahad" subTitle="Developer"></app-card>
-    </div> -->
   </div>
+  <div class="flex-spacer">&nbsp;</div>
 </div>
-<!-- <div class="about-us">
-  <div fxLayout="row">
-    <div>
-      <img
-        class="cursor-pointer"
-        (click)="navigation.navigateToHome()"
-        [src]="'../../../assets/icons/bl-icon-64x64.png'"
-      />
-    </div>
-    <div>
-      <h1 class="cursor-pointer" (click)="navigation.navigateToHome()">
-        BeingLocal
-      </h1>
-    </div>
-  </div>
-
-  <br />
-  <br />
-  <br />
-  <div>
-    <h1 class="title">About Us</h1>
-    <br />
-    <h2 class="title">Our Story</h2>
-  </div>
-  <div class="paragraph">
-    <p>
-      Being Local is started with a mission 'Every Step Counts', every step we
-      take towards building awareness of Indian Products.
-    </p>
-    <p>
-      We believe that Being Local will be a one stop destination for all
-      consumers to know the manufacturers of the Product, and for retailers to
-      identify the products that needs to be put in the premium shelf space.
-    </p>
-    <p>
-      With the movement of #SelfReliantIndia we realized that the leaders of the
-      country were easily able to tap on the sentiment and mobilize the crowds
-      to think about the products they are using. However, when we tried to
-      search for the information there was no single point of destination to
-      find that information. That was the moment we decided to build an app to
-      list the information.
-    </p>
-    <p>
-      We also believe that this listing will help us identify the markets we are
-      yet to explore and make a space.
-    </p>
-    <p>
-      Being Local is built by three passionate Indians who wants to do their bit
-      for their country with LinkedIn profile
-    </p>
-  </div>
-</div> -->

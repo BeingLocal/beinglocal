@@ -1,16 +1,32 @@
-.example-card {
+.card {
   max-width: 100%;
-  height: 250px;
-  width: 250px;
-  text-align: center;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
 }
 
-.example-header-image {
+.card-header-image {
   background-image: url('../../../../assets/icons/bl-icon-64x64.png');
   background-size: cover;
 }
 
 .mat-card-image {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+}
+
+.mat-card-title {
+  font-size: initial !important;
+}
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+.social {
+  text-align: center;
+}
+
+.social-icon {
+  color: var(--primary);
 }
