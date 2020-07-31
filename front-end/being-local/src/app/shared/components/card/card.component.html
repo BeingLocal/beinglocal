@@ -1,21 +1,36 @@
-<mat-card class="example-card">
+<mat-card class="card">
   <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
+    <div mat-card-avatar class="card-header-image"></div>
     <mat-card-title>{{ cardTitle }}</mat-card-title>
     <mat-card-subtitle>{{ subTitle }}</mat-card-subtitle>
   </mat-card-header>
-  <img
-    mat-card-image
-    src="../../../../assets/icons/bl-icon-128x128.png"
-    alt="Being Localite"
-  />
-  <mat-card-content>
+  <mat-card-content class="text-align-center">
+    <img
+      mat-card-image
+      src="../../../../assets/icons/bl-icon-128x128.png"
+      alt="Being Localite"
+    />
     <p>
       {{ description }}
     </p>
   </mat-card-content>
-  <!-- <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions> -->
+  <mat-card-actions>
+    <div class="social">
+      <span
+        class="fab fa-linkedin fa-3x social-icon"
+        (click)="openSocial(linkedin)"
+        >&nbsp;&nbsp;</span
+      >
+      <span
+        class="fab fa-github-square fa-3x social-icon"
+        (click)="openSocial(github)"
+        >&nbsp;&nbsp;</span
+      >
+      <span
+        class="fab fa-twitter-square fa-3x social-icon"
+        (click)="openSocial(twitter)"
+        >&nbsp;&nbsp;</span
+      >
+    </div>
+  </mat-card-actions>
 </mat-card>
