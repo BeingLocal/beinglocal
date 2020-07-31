@@ -1,4 +1,62 @@
+<app-navbar></app-navbar>
 <div class="about-us">
+  <h1 class="title">About Us</h1>
+  <h2 class="sub-title">Our Story</h2>
+  <div class="paragraph">
+    <p>
+      Being Local is started with a mission 'Every Step Counts', every step we
+      take towards building awareness of Indian Products.
+      <br /><br />
+      We believe that Being Local will be a one stop destination for all
+      consumers to know the manufacturers of the Product, and for retailers to
+      identify the products that needs to be put in the premium shelf space.
+      <br /><br />
+      With the movement of #SelfReliantIndia we realized that the leaders of the
+      country were easily able to tap on the sentiment and mobilize the crowds
+      to think about the products they are using.
+      <br /><br />
+      However, when we tried to search for the information there was no single
+      point of destination to find that information. That was the moment we
+      decided to build an app to list the information. We also believe that this
+      listing will help us identify the markets we are yet to explore and make a
+      space.
+      <br /><br />
+      Being Local is built by three passionate Indians who wants to do their bit
+      for their country.
+    </p>
+  </div>
+  <div
+    class="team"
+    fxLayout="row wrap"
+    fxLayoutGap="16px grid"
+    ngStyle.md="padding-left:51px;"
+    ngStyle.xs="padding-left:63px;"
+    ngStyle.sm="padding-left:53px;"
+    ngStyle.lg="padding-left:10%;"
+  >
+    <div
+      fxFlex="33%"
+      fxFlex.xs="100%"
+      fxFlex.sm="33%"
+      *ngFor="let teamMember of teamMembers"
+    >
+      <app-card
+        cardTitle="{{ teamMember.name }}"
+        subTitle="{{ teamMember.title }}"
+      ></app-card>
+    </div>
+    <!-- <div>
+      <app-card cardTitle="Bindu" subTitle="Product Manager"></app-card>
+    </div>
+    <div>
+      <app-card cardTitle="Binesh" subTitle="Developer"></app-card>
+    </div>
+    <div>
+      <app-card cardTitle="Ahad" subTitle="Developer"></app-card>
+    </div> -->
+  </div>
+</div>
+<!-- <div class="about-us">
   <div fxLayout="row">
     <div>
       <img
@@ -49,4 +107,4 @@
       for their country with LinkedIn profile
     </p>
   </div>
-</div>
+</div> -->
