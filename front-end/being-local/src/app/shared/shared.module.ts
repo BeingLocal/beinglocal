@@ -21,6 +21,8 @@ import { InputTextComponent } from './components/input-text/input-text.component
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CardComponent } from './components/card/card.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { SimpleCardComponent } from './components/simple-card/simple-card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CardComponent } from './components/card/card.component';
     SearchBoxComponent,
     InputTextComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    CategoryListComponent,
+    SimpleCardComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +55,9 @@ import { CardComponent } from './components/card/card.component';
     NavbarComponent,
     SearchBoxComponent,
     CarouselComponent,
-    CardComponent
+    CardComponent,
+    CategoryListComponent,
+    SimpleCardComponent
   ]
 })
 export class SharedModule {}
