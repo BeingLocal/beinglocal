@@ -24,11 +24,11 @@ export class CategoryListComponent implements OnInit {
         name: 'Electronics',
         imageUrl:
           'https://cdn.toptenreviews.com/rev/site/cms/category_headers/237-h_main-w.png',
-        icon: 'gourmet'
+        icon: 'electronics'
       },
       {
         id: '3',
-        name: 'Computers & Accessories',
+        name: 'Mobiles, Computers & Accessories',
         imageUrl:
           'https://pisces.bbystatic.com/image2/BestBuy_US/Gallery/pol-EVN-72235-180204-18192.jpg',
         icon: 'computers_mobiles'
@@ -45,7 +45,7 @@ export class CategoryListComponent implements OnInit {
         name: 'Home & Kitchen',
         imageUrl:
           'https://gaadiwaadi.com/wp-content/uploads/2018/10/new-car-launch-november-2018-e1540755340753.jpg',
-        icon: 'gourmet'
+        icon: 'home-kitchen'
       },
       {
         id: '4',
@@ -65,48 +65,48 @@ export class CategoryListComponent implements OnInit {
         name: 'Beauty',
         imageUrl:
           'https://kidsbaron.com/wp-content/uploads/2016/08/Best-Baby-Feeding-Products-For-Your-Deserving-Newborn-Baby.jpg',
-        icon: 'gourmet'
+        icon: 'beauty'
       },
       {
         id: '4',
         name: 'Baby',
         imageUrl:
           'https://fashionista.com/.image/t_share/MTM2Mjk1MjM3NTAzOTUyNDk5/gettyimages-450871616jpg.jpg',
-        icon: 'gourmet'
+        icon: 'baby'
       },
       {
         id: '4',
         name: 'Clothing & Accessories',
         imageUrl:
           'http://www.wellcultivated.co.uk/images/category/organic-health-beauty.jpg',
-        icon: 'gourmet'
+        icon: 'clothing-and-accessories'
       },
       {
         id: '4',
         name: 'Health & Personal Care',
         imageUrl:
           'https://res.cloudinary.com/lmn/image/upload/e_sharpen:150,f_auto,fl_lossy,q_80/v1/gameskinnyc/m/o/b/mobile-games-67024.jpg',
-        icon: 'gourmet'
+        icon: 'health-personal'
       },
       {
         id: '4',
         name: 'Toys & Games',
         imageUrl: 'http://gonexcom.com/files/2015/07/DL_large_it-services.jpg',
-        icon: 'gourmet'
+        icon: 'toy-plane'
       },
       {
         id: '4',
         name: 'Software',
         imageUrl:
           'https://www.midoriservices.com/wp-content/uploads/2017/07/Managed-IT-Services.jpg',
-        icon: 'gourmet'
+        icon: 'software'
       },
       {
         id: '4',
         name: 'IT Services',
         imageUrl:
           'https://images-na.ssl-images-amazon.com/images/I/81Md8ilhyWL._SL1500_.jpg',
-        icon: 'gourmet'
+        icon: 'it-services'
       }
     ];
   }

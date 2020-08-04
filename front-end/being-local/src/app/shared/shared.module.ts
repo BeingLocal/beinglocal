@@ -23,6 +23,7 @@ import { MatCarouselModule } from '@ngmodule/material-carousel';
 import { CardComponent } from './components/card/card.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { SimpleCardComponent } from './components/simple-card/simple-card.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { SimpleCardComponent } from './components/simple-card/simple-card.compon
     CarouselComponent,
     CardComponent,
     CategoryListComponent,
-    SimpleCardComponent
+    SimpleCardComponent,
+    CountryListComponent
   ],
   imports: [
     CommonModule,
@@ -57,7 +59,8 @@ import { SimpleCardComponent } from './components/simple-card/simple-card.compon
     CarouselComponent,
     CardComponent,
     CategoryListComponent,
-    SimpleCardComponent
+    SimpleCardComponent,
+    CountryListComponent
   ]
 })
 export class SharedModule {}
