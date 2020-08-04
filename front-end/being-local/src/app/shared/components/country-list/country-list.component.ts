@@ -51,6 +51,11 @@ export class CountryListComponent implements OnInit {
         id: '4',
         name: 'Singapore',
         icon: 'country-singapore'
+      },
+      {
+        id: '4',
+        name: 'The Netherlands',
+        icon: 'country-netherlands'
       }
     ];
   }
