@@ -32,6 +32,7 @@
               "src/styles.scss",
               "src/theme/beinglocal.theme.scss",
               "src/theme/icons.scss",
+              "src/theme/countries.scss",
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fontawesome.css",
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-regular.css",
               "node_modules/@fortawesome/fontawesome-free-webfonts/css/fa-brands.css",
