@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
   @Input() linkedin: string;
   @Input() github: string;
   @Input() twitter: string;
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-simple-card',
@@ -10,6 +10,12 @@ export class SimpleCardComponent implements OnInit {
   @Input() title: string;
   @Input() imageUrl: string;
   @Input() iconClass: string;
+  @Input() id: string;
+  @Output() clicked = new EventEmitter();
 
   ngOnInit(): void {}
+
+  async open(event: MouseEvent) {
+    this.clicked.emit({ id: this.id });
+  }
 }
