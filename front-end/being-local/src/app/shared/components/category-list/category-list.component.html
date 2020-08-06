@@ -13,6 +13,8 @@
     <app-simple-card
       title="{{ category.name }}"
       iconClass="{{ category.icon }}"
+      id="{{ category.id }}"
+      (clicked)="onClick($event)"
     ></app-simple-card>
   </div>
 </div>
