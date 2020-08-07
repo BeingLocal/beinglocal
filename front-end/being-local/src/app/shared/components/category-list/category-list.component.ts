@@ -25,6 +25,8 @@ export class CategoryListComponent implements OnInit {
   async onClick(event: { id: string }) {
     const { id } = event;
     this.parentId = id;
+    // this.categoryService.parentId = id;
+    this.categoryService.isParent.next(true);
     this.ngOnInit();
   }
 }

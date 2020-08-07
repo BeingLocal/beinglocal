@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoryService {
   baseURL = 'https://preprod-bl-api.netlify.app/.netlify/functions/server';
+
+  isParent = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient) {}
 
