@@ -18,6 +18,13 @@ const routes: Routes = [
         pathMatch: 'full',
         loadChildren: () =>
           import('./modules/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'category/:id',
+        loadChildren: () =>
+          import('./modules/sub-category-list/sub-category-list.module').then(
+            m => m.SubCategoryListModule
+          )
       }
     ]
   }
