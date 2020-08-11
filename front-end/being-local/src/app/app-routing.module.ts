@@ -25,6 +25,13 @@ const routes: Routes = [
           import('./modules/sub-category-list/sub-category-list.module').then(
             m => m.SubCategoryListModule
           )
+      },
+      {
+        path: 'sub-category/:id/brands',
+        loadChildren: () =>
+          import('./modules/brand-list/brand-list.module').then(
+            m => m.BrandListModule
+          )
       }
     ]
   }

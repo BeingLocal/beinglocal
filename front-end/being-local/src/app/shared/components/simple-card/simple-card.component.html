@@ -1,11 +1,27 @@
 <mat-card class="card" (click)="open($event)">
-  <mat-card-content>
-    <div class="card-image" ngClass="{{ iconClass }}"></div>
-    <h5
-      class="text-align-center"
-      style="margin-top: 9px; vertical-align: middle;"
-    >
-      {{ title }}
-    </h5>
-  </mat-card-content>
+  <img
+    *ngIf="!!imageUrl"
+    mat-card-image
+    src="{{ imageUrl }}"
+    class="bl-brand-image"
+  />
+  <ng-container *ngIf="!!imageUrl">
+    <mat-card-content style="border-radius: 4px !important;">
+      <h5 class="text-align-center bl-brand-name">
+        {{ title }}
+      </h5>
+    </mat-card-content>
+  </ng-container>
+
+  <ng-container *ngIf="!!iconClass">
+    <mat-card-content>
+      <div class="card-image" ngClass="{{ iconClass }}"></div>
+      <h5
+        class="text-align-center"
+        style="margin-top: 9px; vertical-align: middle;"
+      >
+        {{ title }}
+      </h5>
+    </mat-card-content>
+  </ng-container>
 </mat-card>

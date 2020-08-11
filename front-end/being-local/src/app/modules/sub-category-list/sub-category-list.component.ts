@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Category } from '../../core/models/category';
 import { CategoryService } from '../../core/services/category.service';
@@ -15,7 +15,8 @@ export class SubCategoryListComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -36,6 +37,6 @@ export class SubCategoryListComponent implements OnInit, OnDestroy {
 
   async onClick(event: { id: string }) {
     const { id } = event;
-    // this.router.navigate(['category', id, 'sub-categories']);
+    this.router.navigate(['sub-category', id, 'brands']);
   }
 }
