@@ -27,90 +27,170 @@
 
 .bl-brand-image {
   object-fit: contain;
-  height: 23vh;
+  height: 100%;
   background-color: currentColor;
 }
 
 .bl-brand-name {
-  margin-top: -12px !important;
+  margin-top: -14px !important;
 }
 
-@media all and (max-width: 1024px) and (min-width: 769px) {
-  .bl-brand-image {
-    height: 23vh;
-  }
+// @media all and (max-width: 1024px) and (min-width: 769px) {
+//   .bl-brand-image {
+//     height: 18vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 768px) and (min-width: 500px) {
-  .bl-brand-image {
-    height: 17vh;
-  }
+// @media all and (max-width: 768px) and (min-width: 500px) {
+//   .bl-brand-image {
+//     height: 17vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 500px) {
-  .bl-brand-image {
-    height: 16vh;
-  }
+// @media all and (max-width: 500px) {
+//   .bl-brand-image {
+//     height: 16vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 500px) and (min-width: 450px) {
-  .bl-brand-image {
-    height: 17vh;
-  }
+// @media all and (max-width: 500px) and (min-width: 450px) {
+//   .bl-brand-image {
+//     height: 17vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 380px) {
-  .bl-brand-image {
-    height: 15vh;
-  }
+// @media all and (max-width: 380px) {
+//   .bl-brand-image {
+//     height: 15vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 360px) {
-  .bl-brand-image {
-    height: 16vh;
-  }
+// @media all and (max-width: 360px) {
+//   .bl-brand-image {
+//     height: 16vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 360px) and (min-width: 279px) {
-  .bl-brand-image {
-    height: 21vh;
-  }
+// @media all and (max-width: 360px) and (min-width: 279px) {
+//   .bl-brand-image {
+//     height: 21vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
 
-@media all and (max-width: 280px) {
-  .bl-brand-image {
-    height: 16vh;
-  }
+// @media all and (max-width: 280px) {
+//   .bl-brand-image {
+//     height: 16vh;
+//   }
 
-  .bl-brand-name {
-    margin-top: -16px !important;
-  }
-}
+//   .bl-brand-name {
+//     margin-top: -16px !important;
+//   }
+// }
+
+// @media screen and (max-width: 768px) and (min-width: 576px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 575px) and (min-width: 526px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 525px) and (min-width: 501px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 500px) and (min-width: 476px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 475px) and (min-width: 426px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 425px) and (min-width: 376px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 375px) and (min-width: 320px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
+
+// @media screen and (max-width: 319px) and (min-width: 280px) {
+//   .bl-brand-image {
+//     height: 22vh;
+//   }
+
+//   .bl-brand-name {
+//     margin-top: -19px !important;
+//   }
+// }
