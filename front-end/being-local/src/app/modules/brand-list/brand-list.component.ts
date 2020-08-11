@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { BrandService } from 'src/app/core/services/brand.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Brand } from 'src/app/core/models/brand';
 import { Subscription } from 'rxjs';
 
@@ -15,7 +15,8 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private brandService: BrandService
+    private brandService: BrandService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,5 +33,10 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());
+  }
+
+  async onClick(event: { id: string }) {
+    const { id } = event;
+    this.router.navigate(['brand', id, 'details']);
   }
 }

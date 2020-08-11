@@ -14,4 +14,10 @@ export class BrandService {
     const categories: any = await this.http.get(brandsAPI).toPromise();
     return categories;
   }
+
+  async getBrandDetail(brandId: string) {
+    const brandsAPI = this.baseURL + `/v1.0/brand/${brandId}`;
+    const brand: any = await this.http.get(brandsAPI).toPromise();
+    return brand;
+  }
 }
