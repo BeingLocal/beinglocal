@@ -15,6 +15,7 @@
       title="{{ category.name }}"
       id="{{ category.id }}"
       imageUrl="{{ category.imageUrl }}"
+      (clicked)="onClick($event)"
     ></app-simple-card>
   </div>
 </div>

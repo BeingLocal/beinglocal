@@ -34,6 +34,13 @@ const routes: Routes = [
           )
       }
     ]
+  },
+  {
+    path: 'brand/:id/details',
+    loadChildren: () =>
+      import('./modules/brand-details/brand-details.module').then(
+        m => m.BrandDetailsModule
+      )
   }
 ];
 

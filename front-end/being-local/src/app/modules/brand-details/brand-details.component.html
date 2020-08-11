@@ -1,0 +1,46 @@
+<app-navbar [showSearchBox]="true"></app-navbar>
+<div class="container">
+  <img class="bl-brand-detail-image" src="{{ brand?.imageUrl }}" />
+</div>
+<div style="color: var(--off-white); padding-top: 2%;">
+  <table
+    style="
+      border-collapse: collapse;
+      border: 2px solid var(--accent);
+      margin: 0 auto;
+      width: 95%;
+    "
+  >
+    <thead
+      style="
+        background-color: var(--accent);
+        color: var(--black);
+        font-size: x-large;
+      "
+    >
+      <tr>
+        <th colspan="2">Details</th>
+      </tr>
+    </thead>
+    <tbody style="font-size: 14px;">
+      <tr>
+        <td><b>Brand</b></td>
+        <td>{{ brand.name }}</td>
+      </tr>
+      <tr>
+        <td><b>Country</b></td>
+        <td>{{ brand.hqCountry.name }}</td>
+      </tr>
+      <tr>
+        <td><b>Company</b></td>
+        <td>{{ brand.company }}</td>
+      </tr>
+      <tr>
+        <td><b>Website</b></td>
+        <td>
+          {{ brand.website }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
