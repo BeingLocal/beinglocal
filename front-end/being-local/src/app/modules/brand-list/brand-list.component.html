@@ -1,0 +1,20 @@
+<app-navbar [showSearchBox]="true"></app-navbar>
+<div class="brand-list">
+  <div
+    fxFlex="calc(20%-25px)"
+    fxFlex.sm="calc(50%-25px)"
+    fxFlex.xs="calc(50%-25px)"
+    *ngFor="let category of brands"
+    ngStyle.xs="padding-left:5%;"
+    ngStyle.sm="padding-left:6%;"
+    ngStyle.md="padding-left:10%;"
+    ngStyle.lg="padding-left:10%;"
+    ngStyle.xl="padding-left:10%;"
+  >
+    <app-simple-card
+      title="{{ category.name }}"
+      id="{{ category.id }}"
+      imageUrl="{{ category.imageUrl }}"
+    ></app-simple-card>
+  </div>
+</div>
