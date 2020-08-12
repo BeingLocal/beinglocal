@@ -24,6 +24,7 @@ import { CardComponent } from './components/card/card.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { SimpleCardComponent } from './components/simple-card/simple-card.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
+import { BasicCardComponent } from './components/basic-card/basic-card.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
     CardComponent,
     CategoryListComponent,
     SimpleCardComponent,
-    CountryListComponent
+    CountryListComponent,
+    BasicCardComponent
   ],
   imports: [
     CommonModule,
@@ -60,7 +62,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
     CardComponent,
     CategoryListComponent,
     SimpleCardComponent,
-    CountryListComponent
+    CountryListComponent,
+    BasicCardComponent
   ]
 })
 export class SharedModule {}
