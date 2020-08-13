@@ -1,4 +1,9 @@
 <div>
-  <mat-icon class="search-icon">search</mat-icon>
-  <app-input-text placeholder="Type to search"></app-input-text>
+  <!-- <mat-icon class="search-icon">search</mat-icon> -->
+  <!-- <app-input-text placeholder="Type to search"></app-input-text> -->
+  <app-auto-complete
+    (changed)="onChangeSearch($event)"
+    [suggestions]="suggestions"
+    [placeHolderText]="placeHolderText"
+  ></app-auto-complete>
 </div>

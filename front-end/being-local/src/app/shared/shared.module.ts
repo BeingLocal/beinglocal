@@ -24,6 +24,8 @@ import { CardComponent } from './components/card/card.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { SimpleCardComponent } from './components/simple-card/simple-card.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { AutoCompleteComponent } from './components/auto-complete/auto-complete.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
     CardComponent,
     CategoryListComponent,
     SimpleCardComponent,
-    CountryListComponent
+    CountryListComponent,
+    AutoCompleteComponent
   ],
   imports: [
     CommonModule,
@@ -51,7 +54,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
     MatInputModule,
     FlexLayoutModule,
     MatCarouselModule.forRoot(),
-    MatCardModule
+    MatCardModule,
+    AutocompleteLibModule
   ],
   exports: [
     NavbarComponent,
@@ -60,7 +64,8 @@ import { CountryListComponent } from './components/country-list/country-list.com
     CardComponent,
     CategoryListComponent,
     SimpleCardComponent,
-    CountryListComponent
+    CountryListComponent,
+    AutoCompleteComponent
   ]
 })
 export class SharedModule {}
