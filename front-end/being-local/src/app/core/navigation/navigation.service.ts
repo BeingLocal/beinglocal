@@ -14,4 +14,8 @@ export class NavigationService {
   navigateToAboutUs() {
     this.router.navigate(['/about-us']);
   }
+
+  navigateToLogin() {
+    this.router.navigate(['/login']);
+  }
 }
