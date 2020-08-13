@@ -33,7 +33,5 @@ export class CarouselComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public onChange(index: number) {
-    console.log('onChange', index);
-  }
+  public onChange(index: number) {}
 }

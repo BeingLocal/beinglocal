@@ -20,4 +20,10 @@ export class BrandService {
     const brand: any = await this.http.get(brandsAPI).toPromise();
     return brand;
   }
+
+  async getBrandByName(brandName: string) {
+    const brandsAPI = this.baseURL + `/v1.0/brands?search=${brandName}`;
+    const brands: any = await this.http.get(brandsAPI).toPromise();
+    return brands;
+  }
 }

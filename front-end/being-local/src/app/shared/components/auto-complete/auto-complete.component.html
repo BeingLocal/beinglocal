@@ -1,0 +1,27 @@
+<div class="ng-autocomplete">
+  <!-- <div class="icon">
+    <mat-icon class="search-icon">search</mat-icon>
+  </div> -->
+
+  <ng-autocomplete
+    [data]="suggestions"
+    [searchKeyword]="keyword"
+    (selected)="selectEvent($event)"
+    (inputChanged)="onChangeSearch($event)"
+    (inputFocused)="onFocused($event)"
+    [itemTemplate]="itemTemplate"
+    [notFoundTemplate]="notFoundTemplate"
+    [minQueryLength]="2"
+    [placeHolder]="placeHolderText"
+  >
+  </ng-autocomplete>
+
+  <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+  </ng-template>
+
+  <ng-template #notFoundTemplate let-notFound>
+    <a [innerHTML]="notFound"></a>
+    <!-- <div [innerHTML]="notFound"></div> -->
+  </ng-template>
+</div>
