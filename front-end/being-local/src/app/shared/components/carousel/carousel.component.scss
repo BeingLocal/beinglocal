@@ -2,3 +2,11 @@
   width: 0% !important;
   height: 0% !important;
 }
+
+::ng-deep .carousel > button:first-of-type {
+  left: 5px !important;
+}
+
+::ng-deep .carousel > button:last-of-type {
+  right: 5px !important;
+}
