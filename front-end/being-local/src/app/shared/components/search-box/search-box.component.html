@@ -3,6 +3,7 @@
   <!-- <app-input-text placeholder="Type to search"></app-input-text> -->
   <app-auto-complete
     (changed)="onChangeSearch($event)"
+    (selected)="onSelect($event)"
     [suggestions]="suggestions"
     [placeHolderText]="placeHolderText"
   ></app-auto-complete>

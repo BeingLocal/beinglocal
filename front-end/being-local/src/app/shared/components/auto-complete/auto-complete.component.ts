@@ -7,6 +7,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 })
 export class AutoCompleteComponent implements OnInit {
   @Output() changed = new EventEmitter();
+  @Output() selected = new EventEmitter();
   @Input() suggestions: any;
   @Input() placeHolderText: string;
 
@@ -15,7 +16,7 @@ export class AutoCompleteComponent implements OnInit {
   ngOnInit(): void {}
 
   selectEvent(item) {
-    // do something with selected item
+    this.selected.emit({ selectedItem: item });
   }
 
   onChangeSearch(val: string) {
