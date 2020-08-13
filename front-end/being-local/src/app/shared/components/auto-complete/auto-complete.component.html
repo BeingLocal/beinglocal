@@ -10,18 +10,17 @@
     (inputChanged)="onChangeSearch($event)"
     (inputFocused)="onFocused($event)"
     [itemTemplate]="itemTemplate"
-    [notFoundTemplate]="notFoundTemplate"
     [minQueryLength]="2"
     [placeHolder]="placeHolderText"
   >
   </ng-autocomplete>
 
   <ng-template #itemTemplate let-item>
-    <a [innerHTML]="item.name"></a>
-  </ng-template>
-
-  <ng-template #notFoundTemplate let-notFound>
-    <a [innerHTML]="notFound"></a>
-    <!-- <div [innerHTML]="notFound"></div> -->
+    <ng-container *ngIf="item.name !== 'Not Found'">
+      <a [innerHTML]="item.name + ' in ' + item?.productCategory?.name"></a>
+    </ng-container>
+    <ng-container *ngIf="item.name === 'Not Found'">
+      <a [innerHTML]="item.name"></a>
+    </ng-container>
   </ng-template>
 </div>
