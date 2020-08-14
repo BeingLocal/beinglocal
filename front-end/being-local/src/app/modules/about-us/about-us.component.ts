@@ -27,7 +27,7 @@ export class AboutUsComponent implements OnInit {
     {
       name: 'Binesh',
       title: 'Developer',
-      linkedin: 'https://www.linkedin.com/in/bindu-madhavi-m-0361372/',
+      linkedin: 'https://www.linkedin.com/in/binesh-k-08a99515/',
       github: 'https://github.com/BineshNarayanan',
       twitter: '',
       urls: [
@@ -41,7 +41,7 @@ export class AboutUsComponent implements OnInit {
     {
       name: 'Ahad',
       title: 'Developer',
-      linkedin: 'https://www.linkedin.com/in/bindu-madhavi-m-0361372/',
+      linkedin: 'https://www.linkedin.com/in/ahad-ansari-00390a143/',
       github: 'https://github.com/AhadAns',
       twitter: '',
       urls: [

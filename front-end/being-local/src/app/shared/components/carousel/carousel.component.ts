@@ -8,7 +8,7 @@ import { Orientation } from '@ngmodule/material-carousel';
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent implements OnInit {
-  public slidesList = new Array(5).fill('');
+  public slidesList = [];
 
   public parentHeight = 'auto';
   public timings = '250ms ease-in';
@@ -39,8 +39,8 @@ export class CarouselComponent implements OnInit {
 
   getListOfNumbers() {
     const listOfNumbers = [];
-    while (listOfNumbers.length < 2) {
-      const randomNumber = this.randomIntFromInterval(1, 2);
+    while (listOfNumbers.length < 6) {
+      const randomNumber = this.randomIntFromInterval(1, 10);
       if (!listOfNumbers.includes(randomNumber)) {
         listOfNumbers.push(randomNumber);
       }
