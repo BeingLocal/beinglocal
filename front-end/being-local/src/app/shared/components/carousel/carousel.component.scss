@@ -5,8 +5,14 @@
 
 ::ng-deep .carousel > button:first-of-type {
   left: 5px !important;
+  display: none;
 }
 
 ::ng-deep .carousel > button:last-of-type {
   right: 5px !important;
+  display: none;
+}
+
+::ng-deep .carousel-indicators {
+  bottom: 0px !important;
 }

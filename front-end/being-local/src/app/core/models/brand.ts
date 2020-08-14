@@ -1,3 +1,5 @@
+import { Category } from './category';
+
 export class Brand {
   id: string;
   name: string;
@@ -7,4 +9,6 @@ export class Brand {
   hqCountry: any;
   website: string;
   imageUrl: string;
+  displayInSearch: string;
+  productCategory: Category;
 }
