@@ -165,3 +165,18 @@
   background-position-x: 1px;
   background-position-y: -5px;
 }
+
+.country-scotland {
+  background-image: url('../assets/icons/countries/scotland.png');
+  background-size: cover;
+  margin-top: 14px !important;
+  transform: scale(1.5);
+}
+
+.country-spain {
+  background-image: url('../assets/icons/countries/spain.png');
+  background-size: cover;
+  margin-top: 14px !important;
+  transform: scale(1.5);
+  background-position-y: -2px;
+}
