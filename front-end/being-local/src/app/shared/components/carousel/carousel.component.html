@@ -21,7 +21,7 @@
     <mat-carousel-slide
       #matCarouselSlide
       *ngFor="let slide of slidesList; let i = index"
-      image="assets/images/allensolly.png"
+      image="assets/images/{{ slide + '.png' }}"
       [overlayColor]="overlayColor"
       [hideOverlay]="hideOverlay"
     >
