@@ -15,7 +15,7 @@ export class CarouselComponent implements OnInit {
   public autoplay = true;
   public interval = 5000;
   public loop = true;
-  public hideArrows = false;
+  public hideArrows = true;
   public hideIndicators = false;
   public color: ThemePalette = 'accent';
   public maxWidth = 'auto';
@@ -26,12 +26,30 @@ export class CarouselComponent implements OnInit {
   public slides = this.slidesList.length;
   public maintainAspectRatio = true;
   public slideHeight = '200px';
-  public overlayColor = '#00000040';
+  public overlayColor = '#00000000';
   public hideOverlay = false;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.slidesList = this.getListOfNumbers();
+  }
 
   public onChange(index: number) {}
+
+  getListOfNumbers() {
+    const listOfNumbers = [];
+    while (listOfNumbers.length < 2) {
+      const randomNumber = this.randomIntFromInterval(1, 2);
+      if (!listOfNumbers.includes(randomNumber)) {
+        listOfNumbers.push(randomNumber);
+      }
+    }
+    return listOfNumbers;
+  }
+
+  randomIntFromInterval(min, max) {
+    // min and max included
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
 }
