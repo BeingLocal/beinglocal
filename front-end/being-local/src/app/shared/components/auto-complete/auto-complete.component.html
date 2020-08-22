@@ -17,7 +17,7 @@
 
   <ng-template #itemTemplate let-item>
     <ng-container *ngIf="item.name !== 'Not Found'">
-      <a [innerHTML]="item.name + ' in ' + item?.productCategory?.name"></a>
+      <a [innerHTML]="item.name + ' in ' + item?.categoryName"></a>
     </ng-container>
     <ng-container *ngIf="item.name === 'Not Found'">
       <a [innerHTML]="item.name"></a>

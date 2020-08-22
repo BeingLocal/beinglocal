@@ -26,4 +26,10 @@ export class BrandService {
     const brands: any = await this.http.get(brandsAPI).toPromise();
     return brands;
   }
+
+  async getSuggestionsByName(name: string) {
+    const brandsAPI = this.baseURL + `/v1.0/search?query=${name}`;
+    const brands: any = await this.http.get(brandsAPI).toPromise();
+    return brands;
+  }
 }
