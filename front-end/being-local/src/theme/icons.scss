@@ -181,6 +181,7 @@
   background-image: url('../assets/icons/refrigerator.png');
   background-size: cover;
   transform: scale(1.4);
+  background-position-x: 3px;
 }
 
 .sanitary-napkin {
@@ -301,7 +302,8 @@
 .heater {
   background-image: url('../assets/icons/room-heater.png');
   background-size: cover;
-  transform: scale(1.3);
+  transform: scale(1.4);
+  background-position-x: 3px;
 }
 
 .shampoo {
@@ -384,6 +386,13 @@
 
 .softdrink {
   background-image: url('../assets/icons/drinks.png');
+  background-size: cover;
+  transform: scale(1.4);
+  background-position-x: 3px;
+}
+
+.washing-machine {
+  background-image: url('../assets/icons/washing-machine.png');
   background-size: cover;
   transform: scale(1.4);
   background-position-x: 3px;
