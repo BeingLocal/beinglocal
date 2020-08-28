@@ -28,6 +28,26 @@ export class SearchBoxComponent implements OnInit {
 
   async onSelect(event: { selectedItem: any }) {
     const { name } = event.selectedItem.name;
-    this.router.navigate(['brand', event.selectedItem.id, 'details']);
+    if (
+      event.selectedItem.entityName === 'ProductCategory' &&
+      event.selectedItem.isParent === 0
+    ) {
+      this.router.navigate([
+        'category',
+        event.selectedItem.parentId,
+        'sub-categories'
+      ]);
+    } else if (
+      event.selectedItem.entityName === 'ProductCategory' &&
+      event.selectedItem.isParent !== 0
+    ) {
+      this.router.navigate([
+        'category',
+        event.selectedItem.id,
+        'sub-categories'
+      ]);
+    } else {
+      this.router.navigate(['brand', event.selectedItem.id, 'details']);
+    }
   }
 }
