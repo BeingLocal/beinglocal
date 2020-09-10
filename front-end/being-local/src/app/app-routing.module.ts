@@ -39,6 +39,13 @@ const routes: Routes = [
           import('./modules/brand-list/brand-list.module').then(
             m => m.BrandListModule
           )
+      },
+      {
+        path: 'browse-by/:category/:id/brands',
+        loadChildren: () =>
+          import('./modules/brand-list/brand-list.module').then(
+            m => m.BrandListModule
+          )
       }
     ]
   },

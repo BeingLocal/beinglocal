@@ -21,14 +21,24 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const sub = this.activatedRoute.params.subscribe(params => {
-      console.log('params', params);
-      this.loadBrands(params.id);
+      if (!params.category && params.category === 'country') {
+        this.loadBrands(params.category, params.id);
+      } else {
+        this.loadBrands(params.category, params.id);
+      }
     });
     this.subscriptions.push(sub);
   }
 
-  private async loadBrands(categoryId: string) {
-    this.brands = await this.brandService.getBrands(categoryId);
+  private async loadBrands(category: string, categoryId: string) {
+    if (category === 'country') {
+      const brandsByCountry = await this.brandService.getBrandsByCountry(
+        categoryId
+      );
+      this.brands = brandsByCountry.items;
+    } else {
+      this.brands = await this.brandService.getBrands(categoryId);
+    }
   }
 
   ngOnDestroy() {

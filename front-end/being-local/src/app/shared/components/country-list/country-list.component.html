@@ -14,6 +14,7 @@
       title="{{ country.name }}"
       iconClass="{{ country.icon }}"
       id="{{ country.woeId }}"
+      (clicked)="onClick($event)"
     ></app-simple-card>
   </div>
 </div>
