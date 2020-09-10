@@ -16,7 +16,8 @@ export class BrandService {
   }
 
   async getBrandsByCountry(country: string) {
-    const brandsAPI = this.baseURL + `/v1.1/brands?country=${country}`;
+    const brandsAPI =
+      this.baseURL + `/v1.1/brands?country=${country}&pageSize=100`;
     const brands: any = await this.http.get(brandsAPI).toPromise();
     return brands;
   }
