@@ -1,4 +1,22 @@
 <app-navbar [showSearchBox]="true"></app-navbar>
+<div>
+  <ng-container *ngIf="showFilter">
+    <div class="filter">
+      <button mat-raised-button value="2">
+        Foreign
+      </button>
+      &nbsp;
+      <button mat-raised-button value="1" (click)="getLocal($event)">
+        Indian
+      </button>
+      &nbsp;
+      <button mat-raised-button value="-1 " (click)="getAll($event)">
+        All
+      </button>
+    </div>
+  </ng-container>
+</div>
+
 <div class="brand-list">
   <div
     fxFlex="calc(20%-25px)"

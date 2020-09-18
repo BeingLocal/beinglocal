@@ -3,6 +3,7 @@ import { BrandService } from 'src/app/core/services/brand.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Brand } from 'src/app/core/models/brand';
 import { Subscription } from 'rxjs';
+import { BrandSearchCriteria } from 'src/app/core/models/brandsearchcriteria';
 
 @Component({
   selector: 'app-brand-list',
@@ -12,6 +13,7 @@ import { Subscription } from 'rxjs';
 export class BrandListComponent implements OnInit, OnDestroy {
   brands: Brand[] = [];
   subscriptions: Subscription[] = [];
+  showFilter = true;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,6 +34,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   private async loadBrands(category: string, categoryId: string) {
     if (category === 'country') {
+      this.showFilter = false;
       const brandsByCountry = await this.brandService.getBrandsByCountry(
         categoryId
       );
@@ -41,6 +44,13 @@ export class BrandListComponent implements OnInit, OnDestroy {
     }
   }
 
+  private async loadBrandsByCriteria(searchCriteria: BrandSearchCriteria) {
+    const brandsBySearchCriteria = await this.brandService.getBrandsBySearchCriteria(
+      searchCriteria
+    );
+    this.brands = brandsBySearchCriteria.items;
+  }
+
   ngOnDestroy() {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
@@ -48,5 +58,38 @@ export class BrandListComponent implements OnInit, OnDestroy {
   async onClick(event: { id: string }) {
     const { id } = event;
     this.router.navigate(['brand', id, 'details']);
+  }
+
+  async getAll(event: Event) {
+    event.stopPropagation();
+    const sub = this.activatedRoute.params.subscribe(params => {
+      this.loadBrandsByCriteria({
+        category: params.id,
+        country: undefined
+      });
+    });
+    this.subscriptions.push(sub);
+  }
+
+  async getLocal(event: Event) {
+    event.stopPropagation();
+    const sub = this.activatedRoute.params.subscribe(params => {
+      this.loadBrandsByCriteria({
+        category: params.id,
+        country: '23424848'
+      });
+    });
+    this.subscriptions.push(sub);
+  }
+
+  async getForeign(event: Event) {
+    event.stopPropagation();
+    const sub = this.activatedRoute.params.subscribe(params => {
+      this.loadBrandsByCriteria({
+        category: params.id,
+        country: ''
+      });
+    });
+    this.subscriptions.push(sub);
   }
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BrandSearchCriteria } from '../models/brandsearchcriteria';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,22 @@ export class BrandService {
   async getSuggestionsByName(name: string) {
     const brandsAPI = this.baseURL + `/v1.0/search?query=${name}`;
     const brands: any = await this.http.get(brandsAPI).toPromise();
+    return brands;
+  }
+
+  async getBrandsBySearchCriteria(searchCriteria: BrandSearchCriteria) {
+    let brandsAPIUrl = this.baseURL + `/v1.1/brands?pageSize=100`;
+    if (searchCriteria.category) {
+      brandsAPIUrl =
+        brandsAPIUrl +
+        `&category=${searchCriteria.category ? searchCriteria.category : ''}`;
+    }
+    if (searchCriteria.country !== undefined) {
+      brandsAPIUrl =
+        brandsAPIUrl +
+        `&country=${searchCriteria.country ? searchCriteria.country : ''}`;
+    }
+    const brands: any = await this.http.get(brandsAPIUrl).toPromise();
     return brands;
   }
 }
