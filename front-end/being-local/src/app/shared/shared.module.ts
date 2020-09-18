@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SearchBoxComponent } from './components/search-box/search-box.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule, MatButton } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
@@ -49,6 +51,8 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     ScrollingModule,
     NativeDateModule,
     MatFormFieldModule,
+    MatButtonToggleModule,
+    MatButtonModule,
     BidiModule,
     PlatformModule,
     MatInputModule,
@@ -65,7 +69,10 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     CategoryListComponent,
     SimpleCardComponent,
     CountryListComponent,
-    AutoCompleteComponent
+    AutoCompleteComponent,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class SharedModule {}
