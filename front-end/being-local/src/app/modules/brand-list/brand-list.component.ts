@@ -14,6 +14,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
   brands: Brand[] = [];
   subscriptions: Subscription[] = [];
   showFilter = true;
+  country = undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -68,6 +69,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
         country: undefined
       });
     });
+    this.country = undefined;
     this.subscriptions.push(sub);
   }
 
@@ -79,6 +81,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
         country: '23424848'
       });
     });
+    this.country = '23424848';
     this.subscriptions.push(sub);
   }
 
@@ -90,6 +93,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
         country: '-1'
       });
     });
+    this.country = '-1';
     this.subscriptions.push(sub);
   }
 }

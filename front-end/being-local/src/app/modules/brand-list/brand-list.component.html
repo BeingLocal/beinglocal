@@ -2,20 +2,33 @@
 <div>
   <ng-container *ngIf="showFilter">
     <div class="filter">
-      <button mat-raised-button value="2" (click)="getForeign($event)">
+      <button
+        mat-raised-button
+        [class.mat-accent]="country === '-1'"
+        (click)="getForeign($event)"
+      >
         Foreign
       </button>
       &nbsp;
-      <button mat-raised-button value="1" (click)="getLocal($event)">
+      <button
+        mat-raised-button
+        [class.mat-accent]="country === '23424848'"
+        (click)="getLocal($event)"
+      >
         Indian
       </button>
       &nbsp;
-      <button mat-raised-button value="-1 " (click)="getAll($event)">
+      <button
+        mat-raised-button
+        [class.mat-accent]="country === undefined"
+        (click)="getAll($event)"
+      >
         All
       </button>
     </div>
   </ng-container>
 </div>
+<ng-container *ngIf="showFilter"><hr /></ng-container>
 
 <div class="brand-list">
   <div
