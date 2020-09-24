@@ -87,7 +87,7 @@ export class BrandListComponent implements OnInit, OnDestroy {
     const sub = this.activatedRoute.params.subscribe(params => {
       this.loadBrandsByCriteria({
         category: params.id,
-        country: ''
+        country: '-1'
       });
     });
     this.subscriptions.push(sub);
