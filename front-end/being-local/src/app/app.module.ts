@@ -15,7 +15,11 @@ import {
   SocialLoginModule,
   SocialAuthServiceConfig
 } from 'angularx-social-login';
-import { GoogleLoginProvider } from 'angularx-social-login';
+import {
+  GoogleLoginProvider,
+  FacebookLoginProvider
+} from 'angularx-social-login';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +28,8 @@ import { GoogleLoginProvider } from 'angularx-social-login';
     AppRoutingModule,
     CoreModule,
     SharedModule,
+    FormsModule,
+    HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     }),
@@ -45,6 +51,10 @@ import { GoogleLoginProvider } from 'angularx-social-login';
             provider: new GoogleLoginProvider(
               '253097580070-g995pgnft5m0r4qe6d0osoo28ue3tjd4.apps.googleusercontent.com'
             )
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('561602290896109')
           }
         ]
       } as SocialAuthServiceConfig

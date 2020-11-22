@@ -13,6 +13,8 @@ import {
   MatRippleModule,
   NativeDateModule
 } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BidiModule } from '@angular/cdk/bidi';
@@ -28,6 +30,8 @@ import { SimpleCardComponent } from './components/simple-card/simple-card.compon
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { AutoCompleteComponent } from './components/auto-complete/auto-complete.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatGridListModule } from '@angular/material/grid-list'
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     CategoryListComponent,
     SimpleCardComponent,
     CountryListComponent,
-    AutoCompleteComponent
+    AutoCompleteComponent,
+    ProfileComponent
   ],
   imports: [
     CommonModule,
@@ -59,7 +64,9 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     FlexLayoutModule,
     MatCarouselModule.forRoot(),
     MatCardModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    MatTabsModule,
+    MatGridListModule
   ],
   exports: [
     NavbarComponent,
