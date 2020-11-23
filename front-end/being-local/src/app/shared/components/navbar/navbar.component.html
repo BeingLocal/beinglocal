@@ -1,58 +1,59 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div class="flex-spacer"></div>
-    <ng-container>
-      <div class="cursor-pointer" (click)="navigation.navigateToHome()">
-        <!-- <img
-          class="cursor-pointer"
-          (click)="navigation.navigateToHome()"
-          [src]="'../../../assets/icons/bl-icon-64x64.png'"
-        /> -->
-        <div class="bl-logo"></div>
-      </div>
-      <div class="brand">
-        <span>BeingLocal</span>
-      </div>
-    </ng-container>
-    <div class="flex-spacer"></div>
-    <ng-container *ngIf="showSearchBox">
-      <div class="search-box" fxShow="”true”" fxHide.lt-md="”true”">
-        <app-search-box></app-search-box>
-      </div>
-    </ng-container>
-    <ng-container>
-      <div>
-        <button
-          color="primary"
-          mat-icon-button
-          [matMenuTriggerFor]="menu"
-          class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu"
-        >
+    <mat-toolbar-row>
+        <div class="flex-spacer"></div>
+        <ng-container>
+            <div class="cursor-pointer" (click)="navigation.navigateToHome()">
+              
+                <div class="bl-logo"></div>
+            </div>
+            <div class="brand">
+                <span>BeingLocal</span>
+            </div>
+        </ng-container>
+        <div class="flex-spacer"></div>
+        <ng-container *ngIf="showSearchBox">
+            <div class="search-box" fxShow="”true”" fxHide.lt-md="”true”">
+                <app-search-box></app-search-box>
+            </div>
+        </ng-container>
+        <ng-container>
+            <div>
+                <button color="primary" mat-icon-button [matMenuTriggerFor]="menu" class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
           <mat-icon
             role="img"
             class="mat-icon notranslate material-icons mat-icon-no-color menu"
+            style="color: var(--accent);"
             >menu</mat-icon
           >
         </button>
-        <mat-menu #menu="matMenu" color="accent">
-          <button mat-menu-item (click)="navigation.navigateToAboutUs()">
+                <mat-menu #menu="matMenu" color="accent">
+                    <button mat-menu-item (click)="navigation.navigateToAboutUs()">
             <span>About Us</span>
           </button>
-          <button mat-menu-item>
+                    <button mat-menu-item>
             <span>Reach Us</span>
           </button>
-          <button mat-menu-item (click)="navigation.navigateToLogin()">
+                    <button *ngIf="!myHome" mat-menu-item (click)="navigation.navigateToLogin()">
             <span>Sign-In</span>
           </button>
-        </mat-menu>
-      </div>
-    </ng-container>
-  </mat-toolbar-row>
-  <mat-toolbar-row *ngIf="showSearchBox" fxShow="true" fxHide.gt-sm="true">
-    <ng-container>
-      <div class="search-box">
-        <app-search-box></app-search-box>
-      </div>
-    </ng-container>
-  </mat-toolbar-row>
+                    <a *ngIf="myHome" mat-menu-item (click)="goto()">
+            <span>{{ myHome.name }}</span>
+                    </a>
+                    <button *ngIf="myHome" mat-menu-item>
+            <span>{{ myHome.email }}</span>
+          </button>
+                    <button *ngIf="myHome" mat-stroked-button color="warn" (click)="signOut()">
+            Sign Out
+          </button>
+                </mat-menu>
+            </div>
+        </ng-container>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="showSearchBox" fxShow="true" fxHide.gt-sm="true">
+        <ng-container>
+            <div class="search-box">
+                <app-search-box></app-search-box>
+            </div>
+        </ng-container>
+    </mat-toolbar-row>
 </mat-toolbar>

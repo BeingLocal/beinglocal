@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BrandSearchCriteria } from '../models/brandsearchcriteria';
+import { map, catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,7 @@ export class BrandService {
   }
 
   async getBrandsByCountry(country: string) {
-    const brandsAPI =
-      this.baseURL + `/v1.1/brands?country=${country}&pageSize=100`;
+    const brandsAPI = this.baseURL + `/v1.1/brands?country=${country}&pageSize=100`;
     const brands: any = await this.http.get(brandsAPI).toPromise();
     return brands;
   }
@@ -56,4 +57,15 @@ export class BrandService {
     const brands: any = await this.http.get(brandsAPIUrl).toPromise();
     return brands;
   }
+
+  rateBrandItem(payload, id){
+    let url = this.baseURL + '/v1.0/brand/' + id + '/rating';
+    return this.http.post(url, payload)
+      .pipe(
+        map((Response) => {
+        return Response;
+    })
+    );
+  }
+
 }
