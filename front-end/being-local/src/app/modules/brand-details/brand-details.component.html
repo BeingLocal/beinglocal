@@ -14,13 +14,14 @@
         color: var(--black);
         font-size: x-large;
       ">
-            <tr>
-                <th colspan="2">
-                    <span>{{ brand.company }} {{ brand.name }}</span
-          >&nbsp;
-          <span>
+      <tr>
+        <th colspan="2">
+          <span>{{ brand?.company }} {{ brand?.name }}</span>
+          &nbsp;
+          <span *ngIf="avgrate">
             <star-rating
-              value="{{ totalstar }}"
+              value="{{ avgrate.averageRating }}"
+              totalstars="{{ allstars }}"
               checkedcolor="gold"
               uncheckedcolor="black"
               size="16px"
@@ -28,38 +29,37 @@
             >
             </star-rating>
             <br />
-            <small style="font-size: 12px;">Based on x rating</small></span
-          >
+            <small style="font-size: 12px;">Based on {{avgrate.noOfRatings}} ratings</small></span>
         </th>
       </tr>
     </thead>
     <tbody style="font-size: 14px;">
       <tr>
         <td><b>Brand</b></td>
-        <td>{{ brand.name }}</td>
+        <td>{{ brand?.name }}</td>
       </tr>
       <tr>
         <td><b>Country</b></td>
-        <td>{{ brand.hqCountry.name }}</td>
+        <td>{{ brand?.hqCountry.name }}</td>
       </tr>
       <tr>
         <td><b>Company</b></td>
-        <td>{{ brand.company }}</td>
+        <td>{{ brand?.company }}</td>
       </tr>
       <tr>
         <td><b>Website</b></td>
         <td>
-          {{ brand.website }}
+          {{ brand?.website }}
         </td>
       </tr>
       <tr>
         <td><b>My Rating</b></td>
         <td *ngIf="!myHome">
           <star-rating
-            value="{{ totalstar }}"
+            value="{{ avgrating }}"
             checkedcolor="gold"
             uncheckedcolor="gray"
-            totalstars="{{ totalstar }}"
+            totalstars="{{ allstars }}"
             (rate)="onRate($event)"
             size="16px"
             readonly="false"
@@ -68,10 +68,10 @@
         </td>
         <td *ngIf="myHome">
           <star-rating
-            value="{{ totalstar }}"
+            value="{{ item?.rating }}"
             checkedcolor="gold"
             uncheckedcolor="gray"
-            totalstars="{{ totalstar }}"
+            totalstars="{{ allstars }}"
             (rate)="onRate($event)"
             size="16px"
             readonly="false"

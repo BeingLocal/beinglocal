@@ -9,6 +9,15 @@
     <mat-card-content style="border-radius: 4px !important;">
       <h5 class="text-align-center bl-brand-name">
         {{ title }}
+        <br>
+        <star-rating
+          value="{{ totalstar }}"
+          checkedcolor="gold"
+          uncheckedcolor="white"
+          size="16px"
+          readonly="true"
+          >
+        </star-rating>
       </h5>
     </mat-card-content>
   </ng-container>

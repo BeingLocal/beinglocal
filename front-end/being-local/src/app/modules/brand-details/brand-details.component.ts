@@ -14,7 +14,9 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
   brand: Brand;
   subscriptions: Subscription[] = [];
 
-  totalstar = 5;
+  allstars = 5;
+  totalstar: number;
+  avgrating: any;
 
   myHome: any
 
@@ -38,6 +40,8 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
       let payload = JSON.parse(JSON.stringify(this.rateItems))
       payload.rating = e.newValue
       payload.ratedBy = this.myHome.name
+      payload.ratedById = this.myHome.id
+      payload.openAuthName = this.myHome.provider
       console.log('rate', payload)
         this.brandService.rateBrandItem(payload, this.brand.id).subscribe((response) => {
           if (response) {
@@ -55,7 +59,7 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
     }
   }
 
-
+  loggedUserRating: any
   ngOnInit(): void {
     const sub = this.activatedRoute.params.subscribe(params => {
       this.loadBrandDetails(params.id);
@@ -63,11 +67,44 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(sub);
     this.myHome = JSON.parse(localStorage.getItem('currentUser'));
+    // this.loggedUserRating = localStorage.getItem('loggeduseRating')
+    // console.log('this.loggedUserRating', this.loggedUserRating)
   }
 
+  avgrate: any
+  ratedbyID: any
+  userRate: any
+  item: any;
   async loadBrandDetails(id: any) {
     this.brand = await this.brandService.getBrandDetail(id);
+    this.avgrate = await this.brandService.getBrandDetailRating(id)
+    this.ratedbyID = await this.brandService.getBrandDetailRatingbyID(this.myHome.id)
+    this.userRate = this.ratedbyID.some(i=>{
+      if(i.brand.id === id){
+        this.item = i;
+        console.log('this.userRate', this.item.rating)
+        return true
+      }
+      //return false
+    })
+    console.log('this.userRate', this.userRate)
+    console.log('this.item.rating', this.item.rating)
+    
+    //localStorage.setItem('loggeduseRating', JSON.stringify(this.ratedbyID[this.ratedbyID.length-2].rating))
     console.log('brand ', this.brand)
+    console.log('rate', this.avgrate)
+    // console.log('userRate', this.ratedbyID.some(
+    //   i=>{
+    //     if(i.brand.id === id){
+    //       item = i;
+    //       console.log('item', item.rating)
+    //       return true
+    //     }
+    //     return false
+    //   }
+    // ))
+    console.log('ratedbyID', this.ratedbyID)
+
   }
 
   ngOnDestroy() {

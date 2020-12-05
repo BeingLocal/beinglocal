@@ -33,6 +33,10 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatGridListModule } from '@angular/material/grid-list'
 
+import { RatingModule } from 'ng-starrating';
+import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
+import { ScrollTrackerDirective } from './components/simple-card/scroll-tracker.directive';
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -44,7 +48,9 @@ import { MatGridListModule } from '@angular/material/grid-list'
     SimpleCardComponent,
     CountryListComponent,
     AutoCompleteComponent,
-    ProfileComponent
+    ProfileComponent,
+    ScrollTopComponent,
+    ScrollTrackerDirective
   ],
   imports: [
     CommonModule,
@@ -66,7 +72,8 @@ import { MatGridListModule } from '@angular/material/grid-list'
     MatCardModule,
     AutocompleteLibModule,
     MatTabsModule,
-    MatGridListModule
+    MatGridListModule,
+    RatingModule
   ],
   exports: [
     NavbarComponent,
@@ -79,7 +86,8 @@ import { MatGridListModule } from '@angular/material/grid-list'
     AutoCompleteComponent,
     MatButtonToggleModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ScrollTopComponent
   ]
 })
 export class SharedModule {}

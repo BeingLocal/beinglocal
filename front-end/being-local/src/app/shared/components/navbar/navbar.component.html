@@ -3,7 +3,6 @@
         <div class="flex-spacer"></div>
         <ng-container>
             <div class="cursor-pointer" (click)="navigation.navigateToHome()">
-              
                 <div class="bl-logo"></div>
             </div>
             <div class="brand">
@@ -17,34 +16,35 @@
             </div>
         </ng-container>
         <ng-container>
+            <!-- <mat-icon>account_circle</mat-icon> -->
             <div>
                 <button color="primary" mat-icon-button [matMenuTriggerFor]="menu" class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
-          <mat-icon
-            role="img"
-            class="mat-icon notranslate material-icons mat-icon-no-color menu"
-            style="color: var(--accent);"
-            >menu</mat-icon
-          >
-        </button>
+                    <mat-icon
+                        role="img"
+                        class="mat-icon notranslate material-icons mat-icon-no-color menu"
+                        style="color: black;"
+                        >account_circle
+                    </mat-icon>
+                </button>
                 <mat-menu #menu="matMenu" color="accent">
                     <button mat-menu-item (click)="navigation.navigateToAboutUs()">
-            <span>About Us</span>
-          </button>
+                        <span>About Us</span>
+                    </button>
                     <button mat-menu-item>
-            <span>Reach Us</span>
-          </button>
+                        <span>Reach Us</span>
+                    </button>
                     <button *ngIf="!myHome" mat-menu-item (click)="navigation.navigateToLogin()">
-            <span>Sign-In</span>
-          </button>
+                        <span>Sign-In</span>
+                    </button>
                     <a *ngIf="myHome" mat-menu-item (click)="goto()">
-            <span>{{ myHome.name }}</span>
+                        <span>{{ myHome.name }}</span>
                     </a>
                     <button *ngIf="myHome" mat-menu-item>
-            <span>{{ myHome.email }}</span>
-          </button>
-                    <button *ngIf="myHome" mat-stroked-button color="warn" (click)="signOut()">
-            Sign Out
-          </button>
+                        <span>{{ myHome.email }}</span>
+                    </button>
+                    <button *ngIf="myHome" mat-menu-item color="primary" (click)="signOut()">
+                        <span>Sign Out</span>
+                    </button>
                 </mat-menu>
             </div>
         </ng-container>

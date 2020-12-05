@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface Tile {
-  color: string;
-  cols: number;
-  rows: number;
-  text: string;
-}
-
-export interface Contract {
-  Id: string;
-  Name: string;
-}
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { BrandService } from 'src/app/core/services/brand.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,50 +9,35 @@ export interface Contract {
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  breakpoint: number;
-
-  myHome : any
-  tiles: Tile[] = [
-    // {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    // {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    // {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    // {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-    {text: 'One', cols: 1, rows: 2, color: 'white'},
-    {text: 'Two', cols: 1, rows: 2, color: 'white'},
-    {text: 'Three', cols: 1, rows: 2, color: 'white'},
-    {text: 'Four', cols: 1, rows: 2, color: 'white'},
-    {text: 'Five', cols: 1, rows: 2, color: 'white'},
-    {text: 'Six', cols: 1, rows: 2, color: 'white'},
-    {text: 'Seven', cols: 1, rows: 2, color: 'white'},
-    {text: '8', cols: 1, rows: 2, color: 'white'}
-  ];
   
+  myHome : any
+  constructor(
+    private brandService: BrandService,
+    private router: Router,
 
-  contracts: Array<Contract> = [
-    { 
-      Id: '1',
-      Name: 'Name 1'
-    },
-    { 
-      Id: '2',
-      Name: 'Name 2'
-    },
-    
-  ];
-
-  constructor() { }
-
-
-
-  ngOnInit(): void {
+  ) { 
     this.myHome = JSON.parse(localStorage.getItem('currentUser'));
-    this.breakpoint = (window.innerWidth <= 400) ? 1 : 6;
     var cardImagePath = this.myHome.photoUrl
+    this.loadUserData()
+  }
+  ratedbyID: any
+
+  ngOnInit(): void {}
+
+  gridColumns = 4;
+
+  toggleGridColumns() {
+    this.gridColumns = this.gridColumns === 3 ? 4 : 3;
   }
 
-  onResize(event) {
-    this.breakpoint = (event.target.innerWidth <= 400) ? 1 : 6;
+  async onClick(id) {
+    console.log('idddddd', id)
+    this.router.navigate(['brand', id, 'details']);
+  }
+
+  async loadUserData(){
+    this.ratedbyID = await this.brandService.getBrandDetailRatingbyID(this.myHome.id)
+    console.log('this.ratedbyid', this.ratedbyID)
   }
 
 }

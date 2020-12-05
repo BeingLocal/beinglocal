@@ -54,7 +54,7 @@ import { FormsModule } from '@angular/forms';
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
-            provider: new FacebookLoginProvider('561602290896109')
+            provider: new FacebookLoginProvider('449873989747495')
           }
         ]
       } as SocialAuthServiceConfig
