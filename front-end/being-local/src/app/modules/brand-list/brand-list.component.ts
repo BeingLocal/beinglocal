@@ -40,12 +40,11 @@ export class BrandListComponent implements OnInit, OnDestroy {
   ) {}
 
   name
-
+  
 
   ngOnInit(): void {
     const sub = this.activatedRoute.params.subscribe(params => {
       this.categoryId = params.id
-      console.log('this.categoryid', this.categoryId)
       if (!params.category && params.category === 'country') {
         this.loadBrands(params.category, params.id);
       } else {
@@ -56,14 +55,12 @@ export class BrandListComponent implements OnInit, OnDestroy {
     this.brands = this.myrrr
   }
 
-  //dataOne:any
   async loadBrands(category: string, categoryId: string) {
     if (category === 'country') {
       this.showFilter = false;
       const brandsByCountry = await this.brandService.getBrandsByCountry(categoryId);
       //this.brands = brandsByCountry.items;
       this.brands = brandsByCountry.items;
-      console.log('this.brands', this.brands, brandsByCountry)  
     } else {
       this.getRatingss()
     }
@@ -76,12 +73,11 @@ export class BrandListComponent implements OnInit, OnDestroy {
       )
       .pipe(
         mergeMap((res1: any) => {
-          console.log('res1', res1.items);
+          //this.brands = res1.items
           this.pageNo++
           return res1.items;
         }),
         mergeMap((res1) => {
-          console.log('data', res1)
           const url =
             "https://preprod-bl-api.netlify.app/.netlify/functions/server/v1.0/brand/" +
             res1["id"] +
@@ -101,7 +97,6 @@ export class BrandListComponent implements OnInit, OnDestroy {
       )
       .subscribe(
         resFinal => {
-          console.log('res final',resFinal);
           this.myrrr.push(resFinal)
           //return resFinal
         },
@@ -115,7 +110,6 @@ export class BrandListComponent implements OnInit, OnDestroy {
   private async loadBrandsByCriteria(searchCriteria: BrandSearchCriteria) {
     const brandsBySearchCriteria = await this.brandService.getBrandsBySearchCriteria(searchCriteria, this.pageN)
     this.brands = brandsBySearchCriteria.items;
-    console.log('clicked filter', this.brands)
   }
 
   ngOnDestroy() {
@@ -124,7 +118,6 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   async onClick(event: { id: string }) {
     const { id } = event;
-    console.log('idddddd', id)
     this.router.navigate(['brand', id, 'details']);
   }
 
@@ -153,7 +146,6 @@ export class BrandListComponent implements OnInit, OnDestroy {
   }
 
   async getForeign(event: Event) {
-    
     event.stopPropagation();
     const sub = this.activatedRoute.params.subscribe(params => {
       this.loadBrandsByCriteria({

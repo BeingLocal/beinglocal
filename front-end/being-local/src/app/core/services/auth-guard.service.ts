@@ -14,42 +14,7 @@ export class AuthGuardService {
     this.routeURL = this.router.url;
    }
 
-  // canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> | boolean{
-  //   return new Promise((resolve, reject) => {
-      
-  //     // if(!this.auth.isAuthenticated){
-  //     //   this.router.navigate(['/login'])
-  //     //   return false
-  //     // }else{
-  //     //   // this.routeURL = this.router.url;
-  //     //   // console.log('routeurl ', this.routeURL)
-  //     //   return true
-  //     // }
-      
-  //     // this.authService.authState.subscribe((user) => {
-  //     //   if (!user && this.routeURL !== '/login') {
-  //     //     this.routeURL = '/login';
-  //     //     this.router.navigate(['/login'], {
-  //     //       queryParams: {
-  //     //         return: 'login'
-  //     //       }
-  //     //     });
-  //     //     return resolve(false);
-  //     //   } else {
-  //     //     this.routeURL = this.router.url;
-  //     //     return resolve(true);
-  //     //   }
-  //     // });
-
-  //     const isLogin = this.auth.isAuthenticated();
-  //     if (!isLogin) this.router.navigate(['/login']) 
-  //     return true;
-
-  //   });
-  // }
-
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    console.log('state', state.url);
     if (localStorage.getItem('APP_TOKEN') != null) {
         //this.router.navigate(['']);
         return true;

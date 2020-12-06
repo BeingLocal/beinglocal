@@ -31,13 +31,11 @@ export class ProfileComponent implements OnInit {
   }
 
   async onClick(id) {
-    console.log('idddddd', id)
     this.router.navigate(['brand', id, 'details']);
   }
 
   async loadUserData(){
     this.ratedbyID = await this.brandService.getBrandDetailRatingbyID(this.myHome.id)
-    console.log('this.ratedbyid', this.ratedbyID)
   }
 
 }
