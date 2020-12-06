@@ -39,9 +39,6 @@
                     <a *ngIf="myHome" mat-menu-item (click)="goto()">
                         <span>{{ myHome.name }}</span>
                     </a>
-                    <button *ngIf="myHome" mat-menu-item>
-                        <span>{{ myHome.email }}</span>
-                    </button>
                     <button *ngIf="myHome" mat-menu-item color="primary" (click)="signOut()">
                         <span>Sign Out</span>
                     </button>
