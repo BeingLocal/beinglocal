@@ -11,6 +11,9 @@ import { BrandService } from 'src/app/core/services/brand.service';
 export class ProfileComponent implements OnInit {
   
   myHome : any
+  ratedbyID: any
+  gridColumns = 4;
+
   constructor(
     private brandService: BrandService,
     private router: Router,
@@ -20,11 +23,8 @@ export class ProfileComponent implements OnInit {
     var cardImagePath = this.myHome.photoUrl
     this.loadUserData()
   }
-  ratedbyID: any
 
   ngOnInit(): void {}
-
-  gridColumns = 4;
 
   toggleGridColumns() {
     this.gridColumns = this.gridColumns === 3 ? 4 : 3;

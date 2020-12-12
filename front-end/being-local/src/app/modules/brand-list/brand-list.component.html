@@ -56,8 +56,9 @@
       infiniteScroll
       [infiniteScrollDistance]="2"
       [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
     ></div>
 
     <div class="example-button-row"  style="text-align: center" >
-      <button mat-button color="primary" *ngIf="brands" >Load More</button>
+      <button mat-button color="primary" *ngIf="brands" (click)="onScroll()">Load More</button>
     </div>

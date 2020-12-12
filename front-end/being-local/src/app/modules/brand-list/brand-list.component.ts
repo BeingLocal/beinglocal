@@ -41,6 +41,10 @@ export class BrandListComponent implements OnInit, OnDestroy {
 
   name
   
+  onScroll() {
+    this.loadBrands(name, this.categoryId)
+    console.log('scrolled!!');
+  }
 
   ngOnInit(): void {
     const sub = this.activatedRoute.params.subscribe(params => {
