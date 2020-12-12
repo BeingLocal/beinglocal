@@ -12,13 +12,16 @@ export class NavbarComponent implements OnInit {
   @Input() showSearchBox: true;
   myHome: any;
 
+  userimage; any
+
   constructor(
     public navigation: NavigationService,
     private authService: SocialAuthService,
     private router: Router
   ) {
     this.myHome = JSON.parse(localStorage.getItem('currentUser'));
-  }
+    console.log('myhome', this.myHome)
+  } 
 
   goto(){
     this.router.navigate(['/profile'])
@@ -31,5 +34,8 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['']);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userimage = this.myHome.photoUrl
+    console.log('userimage', this.userimage)
+  }
 }

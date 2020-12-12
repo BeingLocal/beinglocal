@@ -18,14 +18,31 @@
         <ng-container>
             <!-- <mat-icon>account_circle</mat-icon> -->
             <div>
-                <button color="primary" mat-icon-button [matMenuTriggerFor]="menu" class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
-                    <mat-icon
+                <button color="primary" mat-icon-button class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
+                    <mat-icon *ngIf="!myHome"
                         role="img"
                         class="mat-icon notranslate material-icons mat-icon-no-color menu"
                         style="color: black;"
                         >account_circle
                     </mat-icon>
+                    
+                    <img *ngIf="myHome" [src]="userimage" style="max-width:100%">
+                    
                 </button>
+
+                <button color="primary" mat-icon-button [matMenuTriggerFor]="menu" class="mat-focus-indicator mat-icon-button mat-button-base mat-icon-button-menu">
+                    
+                    <mat-icon
+                        role="img"
+                        class="mat-icon notranslate material-icons mat-icon-no-color menu"
+                        style="color: black;"
+                        >menu
+                    </mat-icon>
+
+                    
+                </button>
+
+
                 <mat-menu #menu="matMenu" color="accent">
                     <button mat-menu-item (click)="navigation.navigateToAboutUs()">
                         <span>About Us</span>

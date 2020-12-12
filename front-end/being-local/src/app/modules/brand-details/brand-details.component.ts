@@ -88,7 +88,7 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
       //return false
     })
     console.log('this.userRate', this.userRate)
-    console.log('this.item.rating', this.item.rating)
+    console.log('this.item.rating', this.item?.rating)
     
     //localStorage.setItem('loggeduseRating', JSON.stringify(this.ratedbyID[this.ratedbyID.length-2].rating))
     console.log('brand ', this.brand)

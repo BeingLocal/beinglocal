@@ -37,6 +37,8 @@ import { RatingModule } from 'ng-starrating';
 import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
 import { ScrollTrackerDirective } from './components/simple-card/scroll-tracker.directive';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -73,7 +75,8 @@ import { ScrollTrackerDirective } from './components/simple-card/scroll-tracker.
     AutocompleteLibModule,
     MatTabsModule,
     MatGridListModule,
-    RatingModule
+    RatingModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     NavbarComponent,

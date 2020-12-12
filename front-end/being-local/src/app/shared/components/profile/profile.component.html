@@ -3,37 +3,48 @@
 <div class="example-card">
   <mat-card>
     <mat-card-header>
-      <mat-icon>more_vert</mat-icon>
       <div mat-card-avatar class="example-header-image">
         <img class="card-img-top img-responsive photo" src="{{ myHome.photoUrl }}" height="50px">
       </div>
       <mat-card-title>{{myHome.name}}</mat-card-title>
       <mat-card-subtitle>{{myHome.email}}</mat-card-subtitle>
       </mat-card-header>
-      <mat-tab-group>
-          <mat-tab label="My Rated Items"> 
-            <div class="content">
-              <div fxLayout="row wrap" fxLayoutGap="16px grid">
-                <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let data of ratedbyID">
-                  <mat-card class="mat-elevation-z4" >
-                    <img mat-card-image src="{{ data.brand.imageUrl }}" (click)="onClick(data.brand.id)">
-                    <mat-card-title>{{data.brand.name}} 
-                      <star-rating
-                        value="{{data.rating}}"
-                        checkedcolor="gold"
-                        uncheckedcolor="white"
-                        size="16px"
-                        readonly="true"
-                        >
-                      </star-rating> 
-                    </mat-card-title>
-                  </mat-card>
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab label="My Reviewed Items"> 
-          </mat-tab>
-      </mat-tab-group>
   </mat-card>
+  <mat-tab-group>
+    <mat-tab label="My Rated Items"> 
+      <div class="brand-list">
+        <div *ngIf="!ratedbyID">
+          <mat-spinner  [diameter]="30" mode="indeterminate" >
+            
+            </mat-spinner>
+        </div>
+        <h2 *ngIf="ratedbyID === false">No rated Items</h2>
+        
+        <div
+          fxFlex="calc(20%-5px)"
+          fxFlex.sm="calc(50%-5px)"
+          fxFlex.xs="calc(50%-5px)"
+          *ngFor="let data of ratedbyID"
+          ngStyle.xs="padding-top:1%;"
+          ngStyle.sm="padding-top:1%;"
+          ngStyle.md="padding-top:1%;"
+          ngStyle.lg="padding-top:1%;"
+          ngStyle.xl="padding-top:1%;"
+        >
+          <app-simple-card
+            title="{{ data.brand.name }}"
+            id="{{ data.brand.id }}"
+            imageUrl="{{ data.brand.imageUrl }}"
+            totalstar="{{data.rating}}"
+            (clicked)="onClick(data.brand.id)"
+          ></app-simple-card>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="My Reviewed Items"> 
+      <div>
+        <h2>No Reviewed Items</h2>
+      </div>
+    </mat-tab>
+</mat-tab-group>
 </div>
