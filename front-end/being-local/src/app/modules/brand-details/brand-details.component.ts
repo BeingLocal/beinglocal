@@ -24,7 +24,10 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
 
   rateItems: Rate
 
-
+  avgrate: any
+  ratedbyID: any
+  userRate: any
+  item: any;
 
   constructor(
     private brandService: BrandService,
@@ -71,10 +74,7 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
     // console.log('this.loggedUserRating', this.loggedUserRating)
   }
 
-  avgrate: any
-  ratedbyID: any
-  userRate: any
-  item: any;
+
   async loadBrandDetails(id: any) {
     this.brand = await this.brandService.getBrandDetail(id);
     this.avgrate = await this.brandService.getBrandDetailRating(id)
@@ -92,7 +92,7 @@ export class BrandDetailsComponent implements OnInit, OnDestroy {
     
     //localStorage.setItem('loggeduseRating', JSON.stringify(this.ratedbyID[this.ratedbyID.length-2].rating))
     console.log('brand ', this.brand)
-    console.log('rate', this.avgrate)
+    console.log('rate', this.avgrate.averageRating)
     // console.log('userRate', this.ratedbyID.some(
     //   i=>{
     //     if(i.brand.id === id){

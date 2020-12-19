@@ -18,16 +18,18 @@
         <th colspan="2">
           <span>{{ brand?.company }} {{ brand?.name }}</span>
           &nbsp;
-          <span *ngIf="avgrate">
-            <star-rating
+          <span *ngIf="avgrate?.averageRating">
+            <!-- <star-rating
               value="{{ avgrate.averageRating }}"
               totalstars="{{ allstars }}"
               checkedcolor="gold"
-              uncheckedcolor="black"
+              uncheckedcolor="gray"
               size="16px"
-              readonly="true"
+              readonly="false"
             >
-            </star-rating>
+            </star-rating> -->
+            <star-rating value={{(+avgrate?.averageRating)}} totalstars={{allstars}} checkedcolor="gold" uncheckedcolor="gray" size="12px"
+            readonly="false"></star-rating>
             <br />
             <small style="font-size: 12px;">Based on {{avgrate.noOfRatings}} ratings</small></span>
         </th>
