@@ -1,0 +1,50 @@
+<app-navbar [showSearchBox]="true"></app-navbar>
+
+<div class="example-card">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <img class="card-img-top img-responsive photo" src="{{ myHome.photoUrl }}" height="50px">
+      </div>
+      <mat-card-title>{{myHome.name}}</mat-card-title>
+      <mat-card-subtitle>{{myHome.email}}</mat-card-subtitle>
+      </mat-card-header>
+  </mat-card>
+  <mat-tab-group>
+    <mat-tab label="My Rated Items"> 
+      <div class="brand-list">
+        <div *ngIf="!ratedbyID">
+          <mat-spinner  [diameter]="30" mode="indeterminate" >
+            
+            </mat-spinner>
+        </div>
+        <h2 *ngIf="ratedbyID === false">No rated Items</h2>
+        
+        <div
+          fxFlex="calc(20%-5px)"
+          fxFlex.sm="calc(50%-5px)"
+          fxFlex.xs="calc(50%-5px)"
+          *ngFor="let data of ratedbyID"
+          ngStyle.xs="padding-top:1%;"
+          ngStyle.sm="padding-top:1%;"
+          ngStyle.md="padding-top:1%;"
+          ngStyle.lg="padding-top:1%;"
+          ngStyle.xl="padding-top:1%;"
+        >
+          <app-simple-card
+            title="{{ data.brand.name }}"
+            id="{{ data.brand.id }}"
+            imageUrl="{{ data.brand.imageUrl }}"
+            totalstar="{{data.rating}}"
+            (clicked)="onClick(data.brand.id)"
+          ></app-simple-card>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="My Reviewed Items"> 
+      <div>
+        <h2>No Reviewed Items</h2>
+      </div>
+    </mat-tab>
+</mat-tab-group>
+</div>

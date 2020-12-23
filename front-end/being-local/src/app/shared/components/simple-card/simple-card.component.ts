@@ -10,6 +10,7 @@ export class SimpleCardComponent implements OnInit {
   @Input() title: string;
   @Input() imageUrl: string;
   @Input() iconClass: string;
+  @Input() totalstar: number;
   @Input() id: string;
   @Output() clicked = new EventEmitter();
 

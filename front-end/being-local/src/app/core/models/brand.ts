@@ -11,4 +11,5 @@ export class Brand {
   imageUrl: string;
   displayInSearch: string;
   productCategory: Category;
+  ratings: 5
 }

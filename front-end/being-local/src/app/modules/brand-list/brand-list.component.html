@@ -32,7 +32,7 @@
 
 <div class="brand-list">
   <div
-    fxFlex="calc(20%-25px)"
+    fxFlex="calc(20%-5px)"
     fxFlex.sm="calc(50%-25px)"
     fxFlex.xs="calc(50%-25px)"
     *ngFor="let category of brands"
@@ -46,7 +46,19 @@
       title="{{ category.name }}"
       id="{{ category.id }}"
       imageUrl="{{ category.imageUrl }}"
+      totalstar="{{category.ratin}}"
       (clicked)="onClick($event)"
     ></app-simple-card>
   </div>
 </div>
+<div
+      class="search-results"
+      infiniteScroll
+      [infiniteScrollDistance]="2"
+      [infiniteScrollThrottle]="50"
+      (scrolled)="onScroll()"
+    ></div>
+
+    <div class="example-button-row"  style="text-align: center" >
+      <button mat-button color="primary" *ngIf="brands" (click)="onScroll()">Load More</button>
+    </div>

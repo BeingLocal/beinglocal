@@ -1,44 +1,84 @@
 <app-navbar [showSearchBox]="true"></app-navbar>
 <div class="container">
-  <img class="bl-brand-detail-image" src="{{ brand?.imageUrl }}" />
+    <img class="bl-brand-detail-image" src="{{ brand?.imageUrl }}" />
 </div>
 <div style="color: var(--off-white); padding-top: 2%;">
-  <table
-    style="
+    <table style="
       border-collapse: collapse;
       border: 2px solid var(--accent);
       margin: 0 auto;
       width: 95%;
-    "
-  >
-    <thead
-      style="
+    ">
+        <thead style="
         background-color: var(--accent);
         color: var(--black);
         font-size: x-large;
-      "
-    >
+      ">
       <tr>
-        <th colspan="2">Details</th>
+        <th colspan="2">
+          <span>{{ brand?.company }} {{ brand?.name }}</span>
+          &nbsp;
+          <span *ngIf="avgrate?.averageRating">
+            <!-- <star-rating
+              value="{{ avgrate.averageRating }}"
+              totalstars="{{ allstars }}"
+              checkedcolor="gold"
+              uncheckedcolor="gray"
+              size="16px"
+              readonly="false"
+            >
+            </star-rating> -->
+            <star-rating value={{(+avgrate?.averageRating)}} totalstars={{allstars}} checkedcolor="gold" uncheckedcolor="gray" size="12px"
+            readonly="false"></star-rating>
+            <br />
+            <small style="font-size: 12px;">Based on {{avgrate.noOfRatings}} ratings</small></span>
+        </th>
       </tr>
     </thead>
     <tbody style="font-size: 14px;">
       <tr>
         <td><b>Brand</b></td>
-        <td>{{ brand.name }}</td>
+        <td>{{ brand?.name }}</td>
       </tr>
       <tr>
         <td><b>Country</b></td>
-        <td>{{ brand.hqCountry.name }}</td>
+        <td>{{ brand?.hqCountry.name }}</td>
       </tr>
       <tr>
         <td><b>Company</b></td>
-        <td>{{ brand.company }}</td>
+        <td>{{ brand?.company }}</td>
       </tr>
       <tr>
         <td><b>Website</b></td>
         <td>
-          {{ brand.website }}
+          {{ brand?.website }}
+        </td>
+      </tr>
+      <tr>
+        <td><b>My Rating</b></td>
+        <td *ngIf="!myHome">
+          <star-rating
+            value="{{ avgrating }}"
+            checkedcolor="gold"
+            uncheckedcolor="gray"
+            totalstars="{{ allstars }}"
+            (rate)="onRate($event)"
+            size="16px"
+            readonly="false"
+          >
+          </star-rating>
+        </td>
+        <td *ngIf="myHome">
+          <star-rating
+            value="{{ item?.rating }}"
+            checkedcolor="gold"
+            uncheckedcolor="gray"
+            totalstars="{{ allstars }}"
+            (rate)="onRate($event)"
+            size="16px"
+            readonly="false"
+          >
+          </star-rating>
         </td>
       </tr>
     </tbody>

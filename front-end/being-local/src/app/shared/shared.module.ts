@@ -13,6 +13,8 @@ import {
   MatRippleModule,
   NativeDateModule
 } from '@angular/material/core';
+import { MatTabsModule } from '@angular/material/tabs';
+
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BidiModule } from '@angular/cdk/bidi';
@@ -28,6 +30,14 @@ import { SimpleCardComponent } from './components/simple-card/simple-card.compon
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { AutoCompleteComponent } from './components/auto-complete/auto-complete.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { MatGridListModule } from '@angular/material/grid-list'
+
+import { RatingModule } from 'ng-starrating';
+import { ScrollTopComponent } from './components/scroll-top/scroll-top.component';
+import { ScrollTrackerDirective } from './components/simple-card/scroll-tracker.directive';
+
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -39,7 +49,10 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     CategoryListComponent,
     SimpleCardComponent,
     CountryListComponent,
-    AutoCompleteComponent
+    AutoCompleteComponent,
+    ProfileComponent,
+    ScrollTopComponent,
+    ScrollTrackerDirective
   ],
   imports: [
     CommonModule,
@@ -59,7 +72,11 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     FlexLayoutModule,
     MatCarouselModule.forRoot(),
     MatCardModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    MatTabsModule,
+    MatGridListModule,
+    RatingModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     NavbarComponent,
@@ -72,7 +89,8 @@ import { AutoCompleteComponent } from './components/auto-complete/auto-complete.
     AutoCompleteComponent,
     MatButtonToggleModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ScrollTopComponent
   ]
 })
 export class SharedModule {}

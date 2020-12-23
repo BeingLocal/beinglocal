@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardService } from './core/services/auth-guard.service';
 import { AboutUsComponent } from './modules/about-us/about-us.component';
+import { ProfileComponent } from './shared/components/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -46,7 +48,11 @@ const routes: Routes = [
           import('./modules/brand-list/brand-list.module').then(
             m => m.BrandListModule
           )
-      }
+      },
+      // {
+      //   path: 'profile',
+      //   component: ProfileComponent
+      // }
     ]
   },
   {
@@ -55,7 +61,13 @@ const routes: Routes = [
       import('./modules/brand-details/brand-details.module').then(
         m => m.BrandDetailsModule
       )
-  }
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    canActivate:[AuthGuardService] 
+  },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

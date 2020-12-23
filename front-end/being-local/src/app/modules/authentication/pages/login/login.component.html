@@ -1,44 +1,29 @@
-<div class="jumbotron bg-transparent text-center">
-  <mat-card *ngIf="!user">
-    <mat-card-header>
-      <mat-card-title>Simple card</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <h4 class="card-title">Not signed in</h4>
-      <p class="card-text">Sign in with</p>
-      <button mat-stroked-button (click)="signInWithGoogle()">Sign-In</button>
-    </mat-card-content>
-  </mat-card>
-  <mat-card *ngIf="user">
-    <mat-card-header>
-      <mat-card-title>Simple card</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="{{ user.photoUrl }}" />
-    <mat-card-content>
-      <div class="card-block">
-        <h4 class="card-title">{{ user.name }}</h4>
-        <p class="card-text">{{ user.email }}</p>
-      </div>
-      <div class="card-block">
-        <button mat-stroked-button color="warn" (click)="signOut()">
-          Sign out
-        </button>
-      </div>
-    </mat-card-content>
-  </mat-card>
-  <!--
-  <div *ngIf="user" class="card text-center">
-    <h6 class="card-header">
-      Social Login Demo
-    </h6>
-    <div class="card-block"></div>
-    <img class="card-img-top img-responsive photo" src="{{ user.photoUrl }}" />
-    <div class="card-block">
-      <h4 class="card-title">{{ user.name }}</h4>
-      <p class="card-text">{{ user.email }}</p>
+<div class="wrapper">
+    <div class="container">
+        <mat-card *ngIf="!user" id="card" style="text-align: center; padding: 30px;">
+            <mat-card-title>
+                <img src="../../../../../assets/icons/bl-icon-64x64.png" width="" alt="logo"> 
+            </mat-card-title>
+
+            <mat-card-content>
+                <div class="col">
+                <button mat-raised-button color="primary" class="google btn" mat-stroked-button (click)="signInWithGoogle()">
+                  <i class="fab fa-google"></i>
+                  Login via Gmail
+                </button>
+                <button mat-raised-button color="primary" class="fb btn" mat-stroked-button (click)="signInWithFB()">
+                  <i class="fab fa-facebook-f"></i>
+                  Login via Facebook
+                </button>
+              </div>
+            </mat-card-content>
+            <mat-card-content>
+              <div class="col"> 
+                <span (click)="continue()" style="cursor: pointer;">
+                  Continue Browsing
+                </span>
+              </div>
+            </mat-card-content>
+        </mat-card>
     </div>
-    <div class="card-block">
-      <button class="btn btn-danger" (click)="signOut()">Sign out</button>
-    </div>
-  </div> -->
 </div>

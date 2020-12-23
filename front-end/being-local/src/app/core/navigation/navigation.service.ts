@@ -18,4 +18,7 @@ export class NavigationService {
   navigateToLogin() {
     this.router.navigate(['/login']);
   }
+  navigateToProfile() {
+    this.router.navigate(['/profile']);
+  }
 }

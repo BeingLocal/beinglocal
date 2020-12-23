@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
     private categoryService: CategoryService
   ) {}
 
+  myHome: any;
   ngOnInit(): void {
+    this.myHome = JSON.parse(localStorage.getItem('currentUser'));
     this.isHome = true;
     if (this.parentId !== null && this.parentId !== undefined) {
       this.isHome = false;
