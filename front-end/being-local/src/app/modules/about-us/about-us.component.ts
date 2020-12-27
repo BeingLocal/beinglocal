@@ -37,20 +37,6 @@ export class AboutUsComponent implements OnInit {
           twitter: ''
         }
       ]
-    },
-    {
-      name: 'Ahad',
-      title: 'Developer',
-      linkedin: 'https://www.linkedin.com/in/ahad-ansari-00390a143/',
-      github: 'https://github.com/AhadAns',
-      twitter: '',
-      urls: [
-        {
-          linkedin: 'https://www.linkedin.com/in/ahad-ansari-00390a143/',
-          github: 'https://github.com/AhadAns',
-          twitter: ''
-        }
-      ]
     }
   ];
   ngOnInit(): void {}
