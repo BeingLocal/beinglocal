@@ -49,7 +49,8 @@ import { FormsModule } from '@angular/forms';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '253097580070-g995pgnft5m0r4qe6d0osoo28ue3tjd4.apps.googleusercontent.com'
+              '160105270362-t450d0bnak2lptvrvoo15uo0rts2pps8.apps.googleusercontent.com'
+              //'253097580070-g995pgnft5m0r4qe6d0osoo28ue3tjd4.apps.googleusercontent.com'
             )
           },
           {
